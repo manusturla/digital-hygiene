@@ -9,9 +9,28 @@ for (const p of PAGES) {
     const h = read(p);
     assert.match(h, /<meta name="viewport"/);
     assert.match(h, /<html lang="es/);
-    assert.doesNotMatch(h, /<(script|link|img|iframe)[^>]+(src|href)="https?:/);
+    assert.doesNotMatch(h, /<(script|link|img|iframe)[^>]+(src|href)="(https?:)?\/\//);
+    assert.doesNotMatch(h, /="\/\//);
   });
 }
+test('style.css: sin recursos externos', () => {
+  const c = read('style.css');
+  assert.doesNotMatch(c, /url\(\s*["']?(https?:)?\/\//);
+  assert.doesNotMatch(c, /@import/);
+});
+test('emergencia: dígitos de cada tel: igual a los del texto visible', () => {
+  const links = [...read('emergencia/index.html').matchAll(/href="tel:([^"]+)"[^>]*>([^<]+)</g)];
+  assert.ok(links.length >= 2);
+  for (const [, tel, txt] of links) assert.equal(tel.replace(/\D/g, ''), txt.replace(/^[^:]*:/, '').replace(/\D/g, ''));
+});
+test('navegador: todo paso que menciona borrar trae la advertencia "acuerdes"', () => {
+  const sec = sections(read('index.html')).find(s => s.includes('id="navegador"'));
+  const lis = [...sec.matchAll(/<li[^>]*>([\s\S]*?)<\/li>/g)].map(m => m[1]);
+  const del = lis.filter(l => /borr/i.test(l));
+  assert.ok(del.length >= 2);
+  for (const l of del) assert.match(l, /acuerdes/);
+  assert.equal(lis.filter(l => /acuerdes/.test(l)).length, del.length);
+});
 test('misma fecha "Revisado" en todas las páginas', () => {
   const dates = PAGES.map(p => read(p).match(/Revisado: (\p{L}+ \d{4})/u)?.[1]);
   assert.ok(dates.every(Boolean));

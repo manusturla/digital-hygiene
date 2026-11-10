@@ -40,7 +40,7 @@ Nombre de menú: las fuentes oficiales para Latinoamérica dicen "Configuración
 - Por qué: Si te roban el celu, alguien de confianza puede avisar a Mercado Pago por vos.
 - Pasos:
   - (común) Pensá en alguien de confianza. Tiene que tener cuenta en Mercado Pago.
-  - (común) Tocá el botón de abajo. Si se abre la app, seguí los pasos en pantalla. [botón: Agregar personas de confianza -> https://www.mercadopago.com.ar/onlinepayments/universal-link?fallback=https%3A%2F%2Fwww.mercadopago.com.ar%2Flinked-accounts%2Ftrusted-third-party&android=mercadopago%3A%2F%2Flinked_accounts%2Ftrusted_third_party%3Furl%3Dhttps%253A%252F%252Fwww.mercadopago.com.ar%252Flinked-accounts%252Ftrusted-third-party&ios=mercadopago%3A%2F%2Flinked_accounts%2Ftrusted_third_party%3Furl%3Dhttps%253A%252F%252Fwww.mercadopago.com.ar%252Flinked-accounts%252Ftrusted-third-party]
+  - (común) Tocá el botón de abajo. Si se abre la app, seguí los pasos en pantalla. Si se abre la página, iniciá sesión y seguí los pasos. [botón: Agregar personas de confianza -> https://www.mercadopago.com.ar/onlinepayments/universal-link?fallback=https%3A%2F%2Fwww.mercadopago.com.ar%2Flinked-accounts%2Ftrusted-third-party&android=mercadopago%3A%2F%2Flinked_accounts%2Ftrusted_third_party%3Furl%3Dhttps%253A%252F%252Fwww.mercadopago.com.ar%252Flinked-accounts%252Ftrusted-third-party&ios=mercadopago%3A%2F%2Flinked_accounts%2Ftrusted_third_party%3Furl%3Dhttps%253A%252F%252Fwww.mercadopago.com.ar%252Flinked-accounts%252Ftrusted-third-party]
   - (común) Después revisá que el reconocimiento facial y el código QR sigan activos como métodos de verificación. [botón: Revisar métodos de verificación -> https://www.mercadopago.com.ar/pampa/security-verification-methods]
   - (común) Avisale a esa persona que la elegiste.
 - Listo: ¡Listo! Si te roban el celu, esa persona puede avisar a Mercado Pago por vos.
@@ -57,11 +57,9 @@ Nombre de menú: las fuentes oficiales para Latinoamérica dicen "Configuración
 - Pasos:
   - (Android) Abrí Chrome y tocá los tres puntitos (Más) > Configuración > Autocompletar y contraseñas > Administrador de contraseñas de Google.
   - (Android) Tocá el ícono de Configuración (abajo a la derecha) y desactivá "Sugerir que se guarden las contraseñas".
-  - (Android) Para borrar las guardadas: en el mismo Administrador, tocá una contraseña y después Borrar.
-  - (iPhone) Abrí Configuración > General > Autorrelleno y contraseñas y desactivá "Autorrelleno de contraseñas y llaves de acceso".
-  - (iPhone) Para borrar las guardadas (iOS 18 o más nuevo): abrí la app Contraseñas, tocá el sitio, Editar y Eliminar. En iOS 17 o anterior: Configuración > Contraseñas, tocá el sitio y Eliminar contraseña.
-  - (común) Antes de borrar, fijate que te acuerdes de esa contraseña.
-- Listo: ¡Listo! Tu celu ya no guarda contraseñas.
+  - (Android) Para borrar las guardadas (antes, fijate que te acuerdes de cada una): en el mismo Administrador, tocá una contraseña y después Borrar.
+  - (iPhone) Para borrar las guardadas (antes, fijate que te acuerdes de cada una). Con iOS 18 o más nuevo: abrí la app Contraseñas, tocá el sitio, Editar y Eliminar. En iOS 17 o anterior: Configuración > Contraseñas, tocá el sitio y Eliminar contraseña.
+- Listo: ¡Listo! Ya revisaste las contraseñas que guarda tu celu.
 - Fuentes: https://support.google.com/chrome/answer/95606 (Android); https://support.apple.com/es-lamr/120758 (ruta de Autorrelleno), https://support.apple.com/es-lamr/104955 (borrar). 2026-11-10.
 
 ### frases
@@ -70,7 +68,7 @@ Nombre de menú: las fuentes oficiales para Latinoamérica dicen "Configuración
 - Por qué: Si una contraseña se filtra, que no abra todas tus cuentas.
 - Pasos (todos comunes):
   - Usá una contraseña distinta en cada cuenta importante: mail, Mercado Pago, banco.
-  - Mejor una frase larga que una palabra rara. Por ejemplo, cuatro palabras sin relación entre sí. No uses este ejemplo.
+  - Mejor una frase larga que una palabra rara. Por ejemplo, cuatro palabras sin relación entre sí, como "mesa lluvia tractor naranja". No uses este ejemplo: inventá la tuya.
   - No uses fechas, nombres ni la misma de otro lado.
   - Anotalas en papel y guardalas en tu casa, o usá un gestor (la próxima tarea).
 - Listo: ¡Listo! Ahora sabés cómo armar contraseñas difíciles de adivinar.
@@ -110,16 +108,17 @@ Aviso: Nadie de un banco, Mercado Pago o WhatsApp te va a pedir un código por t
    - Android: https://www.google.com/android/find . Entrá con tu cuenta de Google y elegí "Marcar como perdido". (support.google.com/accounts/answer/6160491)
    - iPhone: https://www.icloud.com/find . Elegí tu iPhone y activá "Modo perdido". (support.apple.com/es-lamr/104978)
 2. Llamá a tu compañía para bloquear la línea y el celu.
+   - Android con Bloqueo remoto activado (tarea 1): desde cualquier compu o celu, android.com/lock, tu número de teléfono y el desafío reCAPTCHA; el celu se bloquea al conectarse (necesita SIM activa; por eso va antes de llamar a la compañía). Fuente: support.google.com/android/answer/15146908.
    - Desde cualquier teléfono: *910 (número único de las tres compañías; bloquea la línea y el último equipo asociado). Fuente: https://enacom.gob.ar/denuncia-al-910_p4034 y comunicado ENACOM n4503.
    - Claro: 0800 123 0611 (https://asistencia.claro.com.ar/asistencia/servicios-en-tu-celu/soporte/que-hago-si-me-robaron-o-perdi-mi-celular)
-   - Movistar: 0800-321-0611 (https://ayuda.movistar.com.ar/pregunta/que-hacer-si-me-robaron-o-perdi-el-equipo-yo-chip.html)
+   - Movistar: 0800 321 0611 (https://ayuda.movistar.com.ar/pregunta/que-hacer-si-me-robaron-o-perdi-el-equipo-yo-chip.html)
    - Personal: usá el *910 (su número propio no tuvo fuente oficial: VERIFICAR.md).
    - Si tu línea es prepaga, después registrala marcando *234# para no perderla (ENACOM).
 3. Mercado Pago y bancos.
-   - Mercado Pago: reportá el robo desde Ayuda y Seguridad > "Me robaron" (https://www.mercadopago.com.ar/ato-complaint/classifier?origin=SECURITY_HELP_MENU&step=1). Fuente: mercadopago.com.ar/seguridad.
+   - Mercado Pago: iniciá sesión desde otro dispositivo y reportá el robo desde Ayuda y Seguridad > "Me robaron" (no verificado si anda sin sesión: VERIFICAR.md). Si elegiste una persona de confianza, pedile que avise a Mercado Pago desde su app. (https://www.mercadopago.com.ar/ato-complaint/classifier?origin=SECURITY_HELP_MENU&step=1). Fuente: mercadopago.com.ar/seguridad.
    - Bancos: llamá al número que figura al dorso de tu tarjeta.
 4. WhatsApp: WhatsApp no puede desactivar tu cuenta a distancia (ni por mail ni desde otro dispositivo). Lo que sí funciona: con la línea bloqueada, pedí un chip nuevo con el mismo número, activalo y volvé a registrar WhatsApp: se cierra solo en el celu robado. Avisá a tus contactos que no respondan pedidos de plata de tu número. Fuente: https://faq.whatsapp.com/1007324800132703 y /969230211289837.
-5. Cambiá la contraseña de tu Gmail desde otro dispositivo: https://myaccount.google.com/ > Seguridad y acceso > Contraseña. Si no te acordás: https://accounts.google.com/signin/recovery . Fuentes: support.google.com/accounts/answer/41078 y /7682439.
+5. Cambiá la contraseña de tu Gmail desde otro dispositivo: https://myaccount.google.com/ > Seguridad (puede decir "Seguridad y acceso") > Contraseña. Si no te acordás: https://accounts.google.com/signin/recovery . Fuentes: support.google.com/accounts/answer/41078 y /7682439.
 6. Hacé la denuncia policial y anotá el número. IMEI: es el número de serie del celu; el *910 ya lo bloquea. Para verlo, marcá *#06# en el celu (o buscalo en la caja). Fuentes: ENACOM; support.google.com/pixelphone (IMEI) .
 
 Desvío respecto de la spec: el paso 4 no pide la desactivación "por mail" porque WhatsApp dice oficialmente que no existe.
