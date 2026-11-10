@@ -12,9 +12,7 @@ Nombre de menú: las fuentes oficiales para Latinoamérica dicen "Configuración
 - Pasos:
   - (común) Para que funcione, el celu tiene que tener un bloqueo de pantalla (PIN, patrón o huella).
   - (Android) Abrí Configuración (o Ajustes), tocá la lupa 🔍 y escribí *Protección ante robo*. Entrá ahí. (Ruta larga: Google > Todos los servicios > Protección ante robo.)
-  - (Android) Activá "Bloqueo por detección de robo". Si el interruptor está gris, tu celu no la tiene: seguí con la próxima.
-  - (Android) Activá "Bloqueo de dispositivo sin conexión".
-  - (Android) Tocá "Bloqueo remoto" y activalo. Necesita un chip con línea activa.
+  - (Android) Activá estas tres opciones: "Bloqueo por detección de robo", "Bloqueo de dispositivo sin conexión" y "Bloqueo remoto" (este necesita un chip con línea activa). Si alguna está gris o no aparece, tu celu no la tiene: activá las que sí estén.
   - (iPhone) Abrí Configuración > Face ID y código, poné tu código y tocá "Protección del dispositivo en caso de robo". Activala. Hace falta iOS 17.3 o más nuevo.
 - Listo: ¡Listo! Si alguien te arranca el celu, se bloquea y no puede entrar a tus cosas tan fácil.
 - No aplica: Mi celular no tiene esta opción
