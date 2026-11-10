@@ -28,7 +28,6 @@ a { color: var(--accent); }
 }
 .btn { background: var(--accent); color: var(--accent-fg); }
 .btn-ghost { background: transparent; color: var(--accent); border-color: var(--accent); }
-.btn-ok { background: var(--ok); color: #fff; }
 .sos { background: var(--red); color: var(--red-fg); font-size: 1.15rem; margin: var(--gap) 0; }
 .counter { color: var(--muted); margin: 0 0 var(--gap); }
 .task { background: var(--card); border: 1px solid var(--line); border-radius: var(--radius); padding: var(--gap); margin: 0 0 var(--gap); }
@@ -51,7 +50,7 @@ a { color: var(--accent); }
 .guide .nav > * { flex: 1; }
 .guide .steps { list-style: none; padding: 0; }
 .back { display: inline-flex; align-items: center; min-height: 44px; }
-footer { color: var(--muted); font-size: .9rem; padding-top: var(--gap); padding-bottom: 32px; }
+footer { color: var(--muted); font-size: 1rem; padding-top: var(--gap); padding-bottom: 32px; }
 /* emergencia */
 .em-steps { list-style: none; padding: 0; margin: var(--gap) 0; counter-reset: em; }
 .em-step { counter-increment: em; background: var(--card); border: 1px solid var(--line); border-radius: var(--radius); padding: var(--gap); margin: 0 0 var(--gap); }
@@ -62,10 +61,11 @@ footer { color: var(--muted); font-size: .9rem; padding-top: var(--gap); padding
 /* utilidades y modo guía (JS) */
 [hidden] { display: none !important; }
 .js .task > .steps, .js .task > .win { display: none; }
-.min { color: var(--muted); margin: 0 0 .25rem; font-size: .95rem; }
+.min { color: var(--muted); margin: 0 0 .25rem; font-size: 1rem; }
 .actions { display: grid; gap: 8px; margin-top: 12px; }
 .status { color: var(--ok); font-weight: 700; }
 .guide h3 { font-size: 1.3rem; }
 .guide .step-count { color: var(--muted); font-weight: 600; }
 .guide .done-screen { text-align: center; display: grid; gap: 12px; }
 .guide .emoji { font-size: 3rem; line-height: 1; }
+.sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
