@@ -59,3 +59,13 @@ footer { color: var(--muted); font-size: .9rem; padding-top: var(--gap); padding
 .em-step h2::before { content: counter(em) ". "; }
 .em-step .btn { margin: .5rem 0; }
 @media (min-width: 700px) { body { font-size: 19px; } }
+/* utilidades y modo guía (JS) */
+[hidden] { display: none !important; }
+.js .task > .steps, .js .task > .win { display: none; }
+.min { color: var(--muted); margin: 0 0 .25rem; font-size: .95rem; }
+.actions { display: grid; gap: 8px; margin-top: 12px; }
+.status { color: var(--ok); font-weight: 700; }
+.guide h3 { font-size: 1.3rem; }
+.guide .step-count { color: var(--muted); font-weight: 600; }
+.guide .done-screen { text-align: center; display: grid; gap: 12px; }
+.guide .emoji { font-size: 3rem; line-height: 1; }
