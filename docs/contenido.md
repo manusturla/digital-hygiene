@@ -42,7 +42,7 @@ Nombre de menú: las fuentes oficiales para Latinoamérica dicen "Configuración
   - Abrí Transferir: en el inicio de la app, tocá Transferir. Aclaración: ¿No usás Mercado Pago? Pasá los pasos y al final tocá ¡Terminé!
   - Tocá la ruedita ⚙️ de configuración (arriba a la derecha).
   - Bajá hasta "Límites de seguridad", tocá "Configurá tu límite" y seguí los pasos. Aclaración: elegí un monto para el día a día; se puede cambiar.
-  - Cancelá la línea de crédito: Más > Créditos > Detalles del límite > Cancelar línea de crédito. Aviso: NO se puede deshacer; si preferís conservarla, salteá este paso y el siguiente. [botón: Ver la ayuda oficial de Mercado Pago -> https://www.mercadopago.com.ar/ayuda/cancelar-linea-de-credito_36023]
+  - Cancelá la línea de crédito: Más (abajo a la derecha) > Créditos > Detalles del límite > Cancelar línea de crédito. Aviso: NO se puede deshacer; si preferís conservarla, salteá este paso y el siguiente. [botón: Ver la ayuda oficial de Mercado Pago -> https://www.mercadopago.com.ar/ayuda/cancelar-linea-de-credito_36023]
   - Confirmá en todos los carteles hasta que diga que se canceló.
 - Listo: ¡Listo! Aunque alguien use tu celu, no puede vaciarte la cuenta ni sacar un préstamo a tu nombre.
 - Fuente: pasos y capturas (Android) del autor, 2026-11-10 (site/img/mp-*.png); iPhone se asume equivalente; ayuda oficial https://www.mercadopago.com.ar/ayuda/cancelar-linea-de-credito_36023 (irreversible).
