@@ -62,7 +62,7 @@ Caso que la motivó: a un familiar le hubiera servido tener el PIN de WhatsApp, 
 
 ### Tareas que no aplican *(mi decisión)*
 
-- Cada tarea principal ofrece "No uso Mercado Pago" / "Mi celular no tiene esta opción", que cuenta como hecha. Nadie queda trabado sin llegar a "3 de 3".
+- No hay botón "No aplica". Si algo no corresponde (p. ej. no usa Mercado Pago), la persona toca "¡Terminé!" y sigue; la tarea de Mercado Pago lo dice en el primer paso. No hay "Desmarcar": reabrir una tarea hecha muestra la misma guía y el último paso dice "Volver a la lista".
 - Si al verificar resulta que Mercado Pago no permite bajar límites o la línea de crédito, la tarea 3 se reemplaza por la protección de MP que sí exista (p. ej. clave de seguridad, dispositivos vinculados). Siguen siendo 3 tareas.
 
 ### Persistencia

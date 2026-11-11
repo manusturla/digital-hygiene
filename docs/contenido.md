@@ -16,10 +16,9 @@ Nombre de menú: las fuentes oficiales para Latinoamérica dicen "Configuración
     - Bloqueo por detección de robo
     - Bloqueo de dispositivo sin conexión
     - Bloqueo remoto (necesita un chip con línea activa)
-    Si alguna está gris o no aparece, tu celu no la tiene. Activá las que sí estén.
+    Si alguna está gris o no aparece, tu celu no la tiene. Activá las que sí estén. (Dibujo con interruptores; el texto del paso dice: Prendé los tres interruptores.)
   - (iPhone) Abrí Configuración > Face ID y código, poné tu código y tocá "Protección del dispositivo en caso de robo". Activala. Hace falta iOS 17.3 o más nuevo.
 - Listo: ¡Listo! Si alguien te arranca el celu, se bloquea y no puede entrar a tus cosas tan fácil.
-- No aplica: Mi celular no tiene esta opción
 - Fuentes: https://support.google.com/android/answer/15146908 (Android: nombres, ruta, Android 10+, interruptor gris = no compatible, Bloqueo remoto requiere SIM activa); https://support.apple.com/es-lamr/120340 (iOS 17.3+, ruta Configuración > Face ID y código). Consultadas 2026-11-10.
 
 ### whatsapp-pin
@@ -33,7 +32,6 @@ Nombre de menú: las fuentes oficiales para Latinoamérica dicen "Configuración
   - (común) Creá la clave que te pida (un PIN de 6 números o una contraseña, según tu versión) y confirmala. Anotala en papel, no en el celu.
   - (común) Poné un Gmail al que puedas entrar y tocá Siguiente. Sirve para recuperar la clave si te la olvidás.
 - Listo: ¡Listo! Sin tu clave, nadie puede pasar tu WhatsApp a otro celular, ni con tu código por SMS.
-- No aplica: Ya la tenía activada
 - Fuentes: https://faq.whatsapp.com/1920866721452534 (pasos Android e iPhone, "Activar verificación en dos pasos", contraseña/PIN, correo); https://faq.whatsapp.com/1278661612895630 . Consultadas 2026-11-10.
 
 ### mercadopago
@@ -41,12 +39,11 @@ Nombre de menú: las fuentes oficiales para Latinoamérica dicen "Configuración
 - Minutos: 4
 - Por qué: Si te roban el celu, alguien de confianza puede avisar a Mercado Pago por vos.
 - Pasos:
-  - (común) Pensá en alguien de confianza. Tiene que tener cuenta en Mercado Pago.
-  - (común) Tocá el botón de abajo. Si se abre la app, seguí los pasos en pantalla. Si se abre la página, iniciá sesión y seguí los pasos. [botón: Agregar personas de confianza -> https://www.mercadopago.com.ar/onlinepayments/universal-link?fallback=https%3A%2F%2Fwww.mercadopago.com.ar%2Flinked-accounts%2Ftrusted-third-party&android=mercadopago%3A%2F%2Flinked_accounts%2Ftrusted_third_party%3Furl%3Dhttps%253A%252F%252Fwww.mercadopago.com.ar%252Flinked-accounts%252Ftrusted-third-party&ios=mercadopago%3A%2F%2Flinked_accounts%2Ftrusted_third_party%3Furl%3Dhttps%253A%252F%252Fwww.mercadopago.com.ar%252Flinked-accounts%252Ftrusted-third-party]
-  - (común) Después revisá que el reconocimiento facial y el código QR sigan activos como métodos de verificación. [botón: Revisar métodos de verificación -> https://www.mercadopago.com.ar/pampa/security-verification-methods]
+  - (común) Pensá en alguien de confianza. Tiene que tener cuenta en Mercado Pago. Aclaración: ¿No usás Mercado Pago? Tocá ¡Terminé! y seguí.
+  - (común) Tocá el botón. Si se abre la app, seguí los pasos en pantalla. Si se abre la página, iniciá sesión y seguí los pasos. [botón: Agregar personas de confianza -> https://www.mercadopago.com.ar/onlinepayments/universal-link?fallback=https%3A%2F%2Fwww.mercadopago.com.ar%2Flinked-accounts%2Ftrusted-third-party&android=mercadopago%3A%2F%2Flinked_accounts%2Ftrusted_third_party%3Furl%3Dhttps%253A%252F%252Fwww.mercadopago.com.ar%252Flinked-accounts%252Ftrusted-third-party&ios=mercadopago%3A%2F%2Flinked_accounts%2Ftrusted_third_party%3Furl%3Dhttps%253A%252F%252Fwww.mercadopago.com.ar%252Flinked-accounts%252Ftrusted-third-party]
+  - (común) Revisá que el reconocimiento facial y el código QR sigan activos como métodos de verificación. [botón: Revisar métodos de verificación -> https://www.mercadopago.com.ar/pampa/security-verification-methods]
   - (común) Avisale a esa persona que la elegiste.
 - Listo: ¡Listo! Si te roban el celu, esa persona puede avisar a Mercado Pago por vos.
-- No aplica: No uso Mercado Pago
 - Nota: la spec pedía bajar límites/crédito; no hay fuente oficial verificable de que Mercado Pago lo permita (ver VERIFICAR.md), así que la tarea es la protección que sí está documentada.
 - Fuente: https://www.mercadopago.com.ar/seguridad (personas de confianza, métodos de verificación, links de los botones). Consultada 2026-11-10.
 
@@ -59,8 +56,8 @@ Nombre de menú: las fuentes oficiales para Latinoamérica dicen "Configuración
 - Pasos:
   - (Android) Abrí Chrome y tocá los tres puntitos (Más) > Configuración > Autocompletar y contraseñas > Administrador de contraseñas de Google.
   - (Android) Tocá el ícono de Configuración (abajo a la derecha) y desactivá "Sugerir que se guarden las contraseñas".
-  - (Android) Para borrar las guardadas (antes, fijate que te acuerdes de cada una): en el mismo Administrador, tocá una contraseña y después Borrar.
-  - (iPhone) Para borrar las guardadas (antes, fijate que te acuerdes de cada una). Con iOS 18 o más nuevo: abrí la app Contraseñas, tocá el sitio, Editar y Eliminar. En iOS 17 o anterior: Configuración > Contraseñas, tocá el sitio y Eliminar contraseña.
+  - (Android) Para borrar las guardadas: en el mismo Administrador, tocá una contraseña y después Borrar. Aclaración: Antes, fijate que te acuerdes de cada una.
+  - (iPhone) Con iOS 18 o más nuevo: abrí la app Contraseñas, tocá el sitio, Editar y Eliminar. En iOS 17 o anterior: Configuración > Contraseñas, tocá el sitio y Eliminar contraseña. Aclaración: Antes, fijate que te acuerdes de cada una.
 - Listo: ¡Listo! Ya revisaste las contraseñas que guarda tu celu.
 - Fuentes: https://support.google.com/chrome/answer/95606 (Android); https://support.apple.com/es-lamr/120758 (ruta de Autorrelleno), https://support.apple.com/es-lamr/104955 (borrar). 2026-11-10.
 
@@ -83,7 +80,7 @@ Nombre de menú: las fuentes oficiales para Latinoamérica dicen "Configuración
 - Pasos:
   - (común) Instalá la app Bitwarden desde la tienda de tu celu. [botón: Descargar Bitwarden -> https://get.bitwarden.com]
   - (común) Creá tu cuenta con tu Gmail y una contraseña maestra: una frase larga (mínimo 12 caracteres).
-  - (común) Ojo: si te olvidás la contraseña maestra, nadie puede recuperártela. Anotala en papel y guardala en casa.
+  - (común) Si te olvidás la contraseña maestra, nadie puede recuperártela. Anotala en papel y guardala en casa.
   - (Android) En la app, entrá a Ajustes > Autocompletar (Autofill), activá el servicio y elegí Bitwarden.
   - (iPhone) Abrí Configuración > General > Autorrelleno y contraseñas, activá "Autorrelleno de contraseñas y llaves de acceso" y tildá Bitwarden.
 - Listo: ¡Listo! Ya tenés un lugar seguro para tus contraseñas.
@@ -124,3 +121,7 @@ Aviso: Nadie de un banco, Mercado Pago o WhatsApp te va a pedir un código por t
 6. Hacé la denuncia policial y anotá el número. IMEI: es el número de serie del celu; el *910 ya lo bloquea. Para verlo, marcá *#06# en el celu (o buscalo en la caja). Fuentes: ENACOM; support.google.com/pixelphone (IMEI) .
 
 Desvío respecto de la spec: el paso 4 no pide la desactivación "por mail" porque WhatsApp dice oficialmente que no existe.
+
+## Formato de la guía
+
+Cada paso: dibujo opcional (CSS, no captura), título corto (h4), texto, aclaración gris opcional. Los títulos y el reparto en texto/aclaración están en `site/index.html`; el contenido de arriba es el mismo, solo reordenado. Botones: "Listo, siguiente", "¡Terminé!" ("Volver a la lista" si ya estaba hecha). Sin "No aplica" ni "Desmarcar".
