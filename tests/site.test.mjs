@@ -77,3 +77,7 @@ test('mercadopago: sin cuenta se toca ¡Terminé!, y avisa antes de cancelar el 
   const cancel = steps.findIndex(li => li.includes('Cancelar línea de crédito'));
   assert.ok(cancel >= 0 && steps[cancel].includes('no se puede deshacer'));
 });
+test('stepper: cada tarea principal tiene nombre corto', () => {
+  for (const sec of sections(read('index.html')).filter(s => s.includes('data-kind="core"')))
+    assert.match(sec, /data-short="[^"]+"/);
+});

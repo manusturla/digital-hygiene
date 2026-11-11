@@ -6,7 +6,7 @@ function fallback() {
   document.querySelector('.guide')?.remove();
   document.querySelector('.sr-only')?.remove();
   document.querySelectorAll('main [hidden]').forEach(e => { e.hidden = false; });
-  document.querySelectorAll('.min, .actions').forEach(e => e.remove());
+  document.querySelectorAll('.min, .actions, .stepper').forEach(e => e.remove());
 }
 const safe = fn => (...a) => { try { return fn(...a); } catch (e) { console.error(e); fallback(); } };
 
@@ -25,6 +25,7 @@ try {
     core: el.dataset.kind === 'core',
     min: el.dataset.min,
     title: el.querySelector('h3').textContent,
+    short: el.dataset.short,
     win: el.querySelector('.win').textContent,
     steps: [...el.querySelectorAll('.steps > li')].map(li => {
       const c = li.cloneNode(true);
@@ -66,6 +67,17 @@ try {
   }
   let fromList = false;
 
+  // Stepper arriba de todo: las 3 tareas principales y si están hechas.
+  const stepper = h('ol', { className: 'stepper', ariaLabel: 'Tus 3 tareas principales' });
+  const coreTasks = tasks.filter(t => t.core);
+  for (const t of coreTasks) {
+    t.dot = h('span', { className: 'dot' });
+    t.stepBtn = h('button', { type: 'button' }, t.dot, h('span', { className: 'lbl', textContent: t.short }));
+    t.stepBtn.addEventListener('click', safe(() => { fromList = true; location.hash = 'hacer-' + t.id; }));
+    stepper.append(h('li', {}, t.stepBtn));
+  }
+  document.querySelector('header').prepend(stepper);
+
   function drawList() {
     for (const t of tasks) {
       const done = state.done.includes(t.id);
@@ -74,6 +86,13 @@ try {
       t.go.className = done ? 'btn-ghost' : 'btn';
       t.go.textContent = done ? 'Ver de nuevo' : 'Hacerlo ahora →';
     }
+    const firstPending = coreTasks.find(t => !state.done.includes(t.id));
+    coreTasks.forEach((t, i) => {
+      const done = state.done.includes(t.id);
+      t.stepBtn.parentElement.className = done ? 'done' : t === firstPending ? 'current' : '';
+      t.dot.textContent = done ? '✓' : String(i + 1);
+      t.stepBtn.setAttribute('aria-label', `${i + 1}. ${t.title}: ${done ? 'hecha' : 'pendiente'}`);
+    });
     counter.textContent = `${nCore()} de ${coreIds.length} hechas · ~15 min`;
   }
 
