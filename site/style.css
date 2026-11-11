@@ -34,11 +34,11 @@ a { color: var(--accent); }
 .sos { position: fixed; z-index: 20; right: 16px; bottom: calc(16px + env(safe-area-inset-bottom)); display: flex; align-items: center; gap: 10px;
   min-width: 60px; min-height: 60px; max-width: calc(100vw - 32px); padding: 8px 20px 8px 8px; border-radius: 999px;
   background: var(--red); color: var(--red-fg); font-weight: 700; font-size: 1.05rem; text-decoration: none;
-  box-shadow: 0 6px 20px rgba(0,0,0,.3); animation: sos-shrink .6s ease-in-out 2.5s forwards; }
+  box-shadow: 0 6px 20px rgba(0,0,0,.3); animation: sos-shrink 1s cubic-bezier(.65,0,.35,1) 2.5s forwards; }
 .sos-icon { flex: none; width: 44px; height: 44px; border-radius: 50%; display: grid; place-items: center; font-size: 1.6rem; font-weight: 800; background: rgba(255,255,255,.18); }
-.sos-text { overflow: hidden; white-space: nowrap; text-overflow: ellipsis; max-width: 80vw; animation: sos-text .6s ease-in-out 2.5s forwards; }
+.sos-text { overflow: hidden; line-height: 1.2; max-height: 2.4em; width: max-content; max-width: min(17em, calc(100vw - 120px)); animation: sos-text 1s cubic-bezier(.65,0,.35,1) 2.5s forwards; }
 @keyframes sos-shrink { to { padding: 8px; gap: 0; } }
-@keyframes sos-text { to { max-width: 0; opacity: 0; } }
+@keyframes sos-text { 35% { opacity: 0; } to { max-width: 0; opacity: 0; } }
 @media (prefers-reduced-motion: reduce) { .sos, .sos-text { animation-duration: .01s; } }
 .in-guide .sos { bottom: calc(96px + env(safe-area-inset-bottom)); }
 main { padding-bottom: 80px; }
