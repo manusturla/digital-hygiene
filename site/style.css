@@ -122,7 +122,7 @@ footer { color: var(--muted); font-size: 1rem; padding-top: var(--gap); padding-
 /* La captura entera siempre entra en la pantalla: nunca más ancha que la columna ni más alta que ~40% del alto visible. */
 .ill.shot img { display: block; width: auto; height: auto; max-width: 100%; max-height: 40vh; max-height: 40dvh; margin: 0 auto; border-radius: 14px; border: 1px solid var(--line); }
 /* Stepper de las 3 tareas principales (lo dibuja app.js; sin JS no aparece). */
-.stepper { list-style: none; display: flex; padding: 0; margin: 8px 0 16px; counter-reset: none; }
+.stepper { list-style: none; display: flex; padding: 0; margin: 28px 0 8px; counter-reset: none; }
 .stepper li { flex: 1; position: relative; text-align: center; }
 .stepper li + li::before { content: ""; position: absolute; top: 20px; right: calc(50% + 24px); left: calc(-50% + 24px); height: 3px; border-radius: 2px; background: var(--line); }
 .stepper li.done + li::before { background: var(--ok); }
