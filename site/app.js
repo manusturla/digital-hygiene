@@ -5,7 +5,7 @@ function fallback() {
   document.documentElement.classList.remove('js');
   document.querySelector('.guide')?.remove();
   document.querySelector('.sr-only')?.remove();
-  document.querySelectorAll('main [hidden]:not([data-na])').forEach(e => { e.hidden = false; });
+  document.querySelectorAll('main [hidden]').forEach(e => { e.hidden = false; });
   document.querySelectorAll('.min, .actions').forEach(e => e.remove());
 }
 const safe = fn => (...a) => { try { return fn(...a); } catch (e) { console.error(e); fallback(); } };
@@ -26,11 +26,12 @@ try {
     min: el.dataset.min,
     title: el.querySelector('h3').textContent,
     win: el.querySelector('.win').textContent,
-    na: el.querySelector('[data-na]')?.textContent ?? null,
     steps: [...el.querySelectorAll('.steps > li')].map(li => {
       const c = li.cloneNode(true);
       c.querySelector('.os-label')?.remove();
-      return { os: li.dataset.os ?? null, html: c.innerHTML.trim() };
+      const fig = c.querySelector('figure')?.outerHTML ?? '';
+      c.querySelector('figure')?.remove();
+      return { os: li.dataset.os ?? null, fig, html: c.innerHTML.trim() };
     }),
   }));
   const byId = Object.fromEntries(tasks.map(t => [t.id, t]));
@@ -83,10 +84,10 @@ try {
 
   function drawGuide(t, step, screen, congrats, focusStep) {
     guideRoot.replaceChildren();
-    const back = h('button', { type: 'button', className: 'btn-ghost', textContent: '← Volver a la lista' });
+    const back = h('button', { type: 'button', className: 'back', textContent: '← Lista' });
     back.addEventListener('click', safe(goList));
     const title = h('h3', { tabIndex: -1, textContent: t.title });
-    guideRoot.append(back, title);
+    guideRoot.append(h('div', { className: 'guide-top' }, back, title));
 
     if (screen === 'done') {
       const next = nextPending(state.done, coreIds, optIds, t.id);
@@ -122,21 +123,17 @@ try {
     const isDone = state.done.includes(t.id);
     const stepText = `Paso ${step + 1} de ${steps.length}`;
     live.textContent = stepText;
-    guideRoot.append(h('div', { className: 'step-count', textContent: stepText, ariaHidden: 'true' }),
-      h('div', { className: 'progress' }, h('span', { style: `width:${((step + 1) / steps.length) * 100}%` })));
+    guideRoot.append(h('div', { className: 'progress' }, h('span', { style: `width:${((step + 1) / steps.length) * 100}%` })));
     const ol = h('ol', { className: 'steps', start: step + 1 });
-    const li = h('li', { tabIndex: -1, innerHTML: steps[step].html });
+    const li = h('li', { tabIndex: -1, innerHTML: steps[step].fig });
+    li.append(h('div', { className: 'step-count', textContent: stepText.toUpperCase(), ariaHidden: 'true' }));
+    li.insertAdjacentHTML('beforeend', steps[step].html);
     ol.append(li);
-    const prev = h('button', { type: 'button', className: 'btn-ghost', textContent: 'Atrás', disabled: step === 0 });
+    const prev = h('button', { type: 'button', className: 'pill ghost', textContent: 'Atrás', hidden: step === 0 });
     prev.addEventListener('click', safe(() => drawGuide(t, step - 1, 'steps', false, true)));
-    const nxt = h('button', { type: 'button', className: 'btn', textContent: last ? (isDone ? 'Marcar como pendiente' : '¡Listo!') : 'Siguiente' });
-    nxt.addEventListener('click', safe(() => last ? (isDone ? undo(t) : finish(t)) : drawGuide(t, step + 1, 'steps', false, true)));
-    guideRoot.append(ol, h('div', { className: 'nav' }, prev, nxt));
-    if (t.na) {
-      const na = h('button', { type: 'button', className: 'btn-ghost', textContent: t.na });
-      na.addEventListener('click', safe(() => finish(t)));
-      guideRoot.append(na);
-    }
+    const nxt = h('button', { type: 'button', className: 'pill ' + (last ? 'go' : 'pri'), textContent: last ? (isDone ? 'Volver a la lista' : '¡Terminé!') : 'Listo, siguiente' });
+    nxt.addEventListener('click', safe(() => last ? (isDone ? goList() : finish(t)) : drawGuide(t, step + 1, 'steps', false, true)));
+    guideRoot.append(ol, h('div', { className: 'bar' }, h('div', { className: 'bar-in' }, prev, nxt)));
     if (focusStep) { window.scrollTo(0, 0); li.focus(); } else focusTitle(title);
   }
 
@@ -147,18 +144,12 @@ try {
     drawList();
     drawGuide(t, 0, 'done', before === coreIds.length - 1 && nCore() === coreIds.length);
   }
-  function undo(t) {
-    state.done = state.done.filter(id => id !== t.id);
-    save();
-    drawList();
-    goList();
-  }
-
   const render = safe(function render() {
     const m = location.hash.match(/^#hacer-(.+)$/);
     const t = (m && tasks.find(x => x.id === m[1])) ?? null;
     for (const c of main.children) if (c !== guideRoot) c.hidden = !!t;
     guideRoot.hidden = !t;
+    document.body.classList.toggle('in-guide', !!t);
     drawList();
     if (t) drawGuide(t, 0, 'steps');
     else if (rendered) focusTitle(document.querySelector('h1'));

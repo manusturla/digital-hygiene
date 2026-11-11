@@ -59,11 +59,17 @@ test('index: emergencia relativa, aviso de códigos, recursos relativos', () => 
   assert.match(h, /href="style\.css"/);
   assert.match(h, /<script type="module" src="app\.js">/);
 });
-test('index: cada tarea tiene pasos y win; no-aplica solo en principales', () => {
+test('index: cada tarea tiene pasos y win; cada paso tiene h4', () => {
   for (const sec of sections(read('index.html'))) {
     assert.match(sec, /<ol class="steps">/);
     assert.match(sec, /<p class="win">/);
-    if (sec.includes('data-kind="core"')) assert.match(sec, /data-na hidden/);
-    else assert.doesNotMatch(sec, /data-na/);
+    const lis = sec.match(/<li[^>]*>[\s\S]*?<\/li>/g);
+    for (const l of lis) assert.match(l, /<h4>(<span[^>]*>[^<]*<\/span>)? ?[^<]+<\/h4>/);
   }
+});
+test('no existe "No aplica" (data-na) en ningún lado', () => {
+  for (const f of ['index.html', 'app.js', 'style.css']) assert.doesNotMatch(read(f), /data-na/);
+});
+test('mercadopago: avisa que sin cuenta se toca ¡Terminé!', () => {
+  assert.match(sections(read('index.html')).find(s => s.includes('id="mercadopago"')), /¿No usás Mercado Pago\? Tocá ¡Terminé! y seguí\./);
 });
