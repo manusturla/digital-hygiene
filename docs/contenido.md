@@ -26,7 +26,8 @@ Nombre de menú: las fuentes oficiales para Latinoamérica dicen "Configuración
 - Minutos: 3
 - Por qué: Es la "verificación en dos pasos": aunque alguien consiga tu código por SMS, no puede usar tu WhatsApp sin tu clave.
 - Pasos:
-  - (Android) Abrí WhatsApp. Tocá los tres puntitos ⋮ > Ajustes > Cuenta > Verificación en dos pasos. [captura del autor: site/img/wa-cuenta.png]
+  - (Android) Abrí WhatsApp. Tocá los tres puntitos ⋮ > Ajustes > Cuenta. [captura del autor: site/img/wa-cuenta.png]
+  - (Android) Dentro de Cuenta, tocá Verificación en dos pasos. [captura del autor: site/img/wa-verificacion-menu.png]
   - (iPhone) Abrí WhatsApp. Tocá Tú > Cuenta > Verificación en dos pasos.
   - (común) Prendé el interruptor de "Verificación en dos pasos" [captura del autor: site/img/wa-verificacion.png, igual en Android e iPhone]. Aclaración: en algunas versiones hay un botón "Activar" en vez del interruptor.
   - (común) Creá la clave que te pida (un PIN de 6 números o una contraseña, según tu versión) y confirmala. Anotala en papel, no en el celu.
