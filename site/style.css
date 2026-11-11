@@ -100,3 +100,10 @@ footer { color: var(--muted); font-size: 1rem; padding-top: var(--gap); padding-
 @media (prefers-color-scheme: dark) { .pill.go { color: #06210f; } }
 .in-guide header, .in-guide footer { display: none; }
 .guide-top h3:focus { outline: none; }
+.tiles { display: flex; gap: 6px; }
+.tiles span { flex: 1; text-align: center; padding: 10px 2px; border-radius: 10px; background: var(--ill-bg); font-size: .85rem; font-weight: 600; }
+.tiles .hl, .topbar .hl { background: var(--hl); outline: 2px solid var(--accent); }
+.topbar { display: flex; gap: 6px; align-items: center; margin-bottom: 6px; }
+.topbar span { padding: 4px 8px; border-radius: 8px; background: var(--ill-bg); }
+.topbar .sp { flex: 1; background: none; }
+.mini-t.big { font-size: 1.3rem; }

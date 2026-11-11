@@ -17,7 +17,7 @@ Dos listas: lo que hay que probar en un celular real (parte de esto SÍ está en
 - [ ] [EMERGENCIA] Android Bloqueo remoto en android.com/lock: verificado en support.google.com/android/answer/15146908 (número de teléfono + reCAPTCHA, necesita SIM activa y número verificado, pregunta de seguridad si la configuraste). Falta probarlo en un celu real.
 
 ## Datos sin fuente oficial (omitido del sitio)
-- [ ] Mercado Pago: bajar el límite de transferencias o la línea de crédito/préstamos. No hay fuente oficial accesible (las páginas de ayuda dan 403 al consultar desde acá). Por eso la tarea 3 es "persona de confianza". Si existe en la app, evaluar sumarlo.
+- [ ] [CORE] Mercado Pago "límite y crédito": rutas verificadas por el autor en su celu. Confirmar en el otro sistema (Android o iPhone) (Transferir > ⚙️ > Configurá tu límite; Más > Créditos > Detalles del límite > Cancelar línea de crédito).
 - [ ] Mercado Pago: ruta exacta en la app para persona de confianza (una nota de prensa dice Mi perfil > Seguridad > Persona de confianza, hasta 5 personas); el sitio usa el botón oficial en lugar de la ruta.
 - [ ] Mercado Pago: bloquear tarjeta (débito/prepaga) y qué hace exactamente "Me robaron" (la ayuda oficial parece decir que cierra sesiones y desvincula dispositivos). Páginas de ayuda dan 403.
 - [ ] [EMERGENCIA] Mercado Pago: si "Me robaron" (ato-complaint) funciona desde otro dispositivo sin sesión abierta. La página de seguridad no lo dice. El sitio ya pide iniciar sesión desde otro dispositivo; confirmar que se pueda.

@@ -50,7 +50,7 @@ const sections = h => h.split('<section class="task"').slice(1);
 test('index: 3 principales en orden y 4 opcionales', () => {
   const ids = [...read('index.html').matchAll(/<section class="task" id="([^"]+)" data-kind="(core|optional)"/g)].map(m => m[1] + ':' + m[2]);
   assert.deepEqual(ids, ['antirrobo:core', 'whatsapp-pin:core', 'mercadopago:core',
-    'navegador:optional', 'frases:optional', 'gestor:optional', 'gmail-2fa:optional']);
+    'mp-confianza:optional', 'navegador:optional', 'frases:optional', 'gestor:optional', 'gmail-2fa:optional']);
 });
 test('index: emergencia relativa, aviso de códigos, recursos relativos', () => {
   const h = read('index.html');
@@ -70,6 +70,10 @@ test('index: cada tarea tiene pasos y win; cada paso tiene h4', () => {
 test('no existe "No aplica" (data-na) en ningún lado', () => {
   for (const f of ['index.html', 'app.js', 'style.css']) assert.doesNotMatch(read(f), /data-na/);
 });
-test('mercadopago: avisa que sin cuenta se toca ¡Terminé!', () => {
-  assert.match(sections(read('index.html')).find(s => s.includes('id="mercadopago"')), /¿No usás Mercado Pago\? Pasá los pasos y al final tocá ¡Terminé!/);
+test('mercadopago: sin cuenta se toca ¡Terminé!, y avisa antes de cancelar el crédito', () => {
+  const mp = sections(read('index.html')).find(s => s.includes('id="mercadopago"'));
+  assert.match(mp, /¿No usás Mercado Pago\? Pasá los pasos y al final tocá ¡Terminé!/);
+  const steps = mp.split('<li').slice(1);
+  const cancel = steps.findIndex(li => li.includes('Cancelar línea de crédito'));
+  assert.ok(cancel >= 0 && steps[cancel].includes('no se puede deshacer'));
 });

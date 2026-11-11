@@ -35,16 +35,28 @@ Nombre de menú: las fuentes oficiales para Latinoamérica dicen "Configuración
 - Fuentes: https://faq.whatsapp.com/1920866721452534 (pasos Android e iPhone, "Activar verificación en dos pasos", contraseña/PIN, correo); https://faq.whatsapp.com/1278661612895630 . Consultadas 2026-11-10.
 
 ### mercadopago
+- Título: Mercado Pago: límite y crédito
+- Minutos: 5
+- Por qué: Si alguien usa tu celu desbloqueado, no puede transferir más que tu límite ni sacar un préstamo a tu nombre.
+- Pasos (iguales en Android e iPhone):
+  - Abrí Transferir: en el inicio de la app, tocá Transferir. Aclaración: ¿No usás Mercado Pago? Pasá los pasos y al final tocá ¡Terminé!
+  - Tocá la ruedita ⚙️ de configuración (arriba a la derecha).
+  - Tocá "Configurá tu límite" y seguí los pasos. Aclaración: elegí un monto para el día a día; se puede cambiar.
+  - Cancelá la línea de crédito: Más > Créditos > Detalles del límite > Cancelar línea de crédito. Aviso: NO se puede deshacer; si preferís conservarla, salteá este paso y el siguiente.
+  - Confirmá en todos los carteles hasta que diga que se canceló. [botón: Ver la ayuda de Mercado Pago -> https://www.mercadopago.com.ar/ayuda/cancelar-linea-de-credito_36023]
+- Listo: ¡Listo! Aunque alguien use tu celu, no puede vaciarte la cuenta ni sacar un préstamo a tu nombre.
+- Fuente: pasos verificados por el autor en la app, 2026-11-10; ayuda oficial https://www.mercadopago.com.ar/ayuda/cancelar-linea-de-credito_36023 (irreversible).
+
+### mp-confianza (opcional)
 - Título: Mercado Pago: persona de confianza
 - Minutos: 4
 - Por qué: Si te roban el celu, alguien de confianza puede avisar a Mercado Pago por vos.
 - Pasos:
-  - (común) Pensá en alguien de confianza. Tiene que tener cuenta en Mercado Pago. Aclaración: ¿No usás Mercado Pago? Pasá los pasos y al final tocá ¡Terminé!
+  - (común) Pensá en alguien de confianza. Tiene que tener cuenta en Mercado Pago.
   - (común) Tocá el botón. Si se abre la app, seguí los pasos en pantalla. Si se abre la página, iniciá sesión y seguí los pasos. [botón: Agregar personas de confianza -> https://www.mercadopago.com.ar/onlinepayments/universal-link?fallback=https%3A%2F%2Fwww.mercadopago.com.ar%2Flinked-accounts%2Ftrusted-third-party&android=mercadopago%3A%2F%2Flinked_accounts%2Ftrusted_third_party%3Furl%3Dhttps%253A%252F%252Fwww.mercadopago.com.ar%252Flinked-accounts%252Ftrusted-third-party&ios=mercadopago%3A%2F%2Flinked_accounts%2Ftrusted_third_party%3Furl%3Dhttps%253A%252F%252Fwww.mercadopago.com.ar%252Flinked-accounts%252Ftrusted-third-party]
   - (común) Revisá que el reconocimiento facial y el código QR sigan activos como métodos de verificación. [botón: Revisar métodos de verificación -> https://www.mercadopago.com.ar/pampa/security-verification-methods]
   - (común) Avisale a esa persona que la elegiste.
 - Listo: ¡Listo! Si te roban el celu, esa persona puede avisar a Mercado Pago por vos.
-- Nota: la spec pedía bajar límites/crédito; no hay fuente oficial verificable de que Mercado Pago lo permita (ver VERIFICAR.md), así que la tarea es la protección que sí está documentada.
 - Fuente: https://www.mercadopago.com.ar/seguridad (personas de confianza, métodos de verificación, links de los botones). Consultada 2026-11-10.
 
 ## Opcionales
