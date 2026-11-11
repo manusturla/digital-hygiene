@@ -76,7 +76,7 @@ try {
     t.stepBtn.addEventListener('click', safe(() => { fromList = true; location.hash = 'hacer-' + t.id; }));
     stepper.append(h('li', {}, t.stepBtn));
   }
-  document.querySelector('header').prepend(stepper);
+  document.querySelector('header').append(stepper);
 
   function drawList() {
     for (const t of tasks) {
