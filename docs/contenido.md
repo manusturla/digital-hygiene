@@ -39,7 +39,7 @@ Nombre de menú: las fuentes oficiales para Latinoamérica dicen "Configuración
 - Minutos: 4
 - Por qué: Si te roban el celu, alguien de confianza puede avisar a Mercado Pago por vos.
 - Pasos:
-  - (común) Pensá en alguien de confianza. Tiene que tener cuenta en Mercado Pago. Aclaración: ¿No usás Mercado Pago? Tocá ¡Terminé! y seguí.
+  - (común) Pensá en alguien de confianza. Tiene que tener cuenta en Mercado Pago. Aclaración: ¿No usás Mercado Pago? Pasá los pasos y al final tocá ¡Terminé!
   - (común) Tocá el botón. Si se abre la app, seguí los pasos en pantalla. Si se abre la página, iniciá sesión y seguí los pasos. [botón: Agregar personas de confianza -> https://www.mercadopago.com.ar/onlinepayments/universal-link?fallback=https%3A%2F%2Fwww.mercadopago.com.ar%2Flinked-accounts%2Ftrusted-third-party&android=mercadopago%3A%2F%2Flinked_accounts%2Ftrusted_third_party%3Furl%3Dhttps%253A%252F%252Fwww.mercadopago.com.ar%252Flinked-accounts%252Ftrusted-third-party&ios=mercadopago%3A%2F%2Flinked_accounts%2Ftrusted_third_party%3Furl%3Dhttps%253A%252F%252Fwww.mercadopago.com.ar%252Flinked-accounts%252Ftrusted-third-party]
   - (común) Revisá que el reconocimiento facial y el código QR sigan activos como métodos de verificación. [botón: Revisar métodos de verificación -> https://www.mercadopago.com.ar/pampa/security-verification-methods]
   - (común) Avisale a esa persona que la elegiste.

@@ -71,5 +71,5 @@ test('no existe "No aplica" (data-na) en ningún lado', () => {
   for (const f of ['index.html', 'app.js', 'style.css']) assert.doesNotMatch(read(f), /data-na/);
 });
 test('mercadopago: avisa que sin cuenta se toca ¡Terminé!', () => {
-  assert.match(sections(read('index.html')).find(s => s.includes('id="mercadopago"')), /¿No usás Mercado Pago\? Tocá ¡Terminé! y seguí\./);
+  assert.match(sections(read('index.html')).find(s => s.includes('id="mercadopago"')), /¿No usás Mercado Pago\? Pasá los pasos y al final tocá ¡Terminé!/);
 });
