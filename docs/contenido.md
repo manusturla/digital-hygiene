@@ -22,7 +22,7 @@ Nombre de menú: las fuentes oficiales para Latinoamérica dicen "Configuración
 - Fuentes: https://support.google.com/android/answer/15146908 (Android: nombres, ruta, Android 10+, interruptor gris = no compatible, Bloqueo remoto requiere SIM activa); https://support.apple.com/es-lamr/120340 (iOS 17.3+, ruta Configuración > Face ID y código). Consultadas 2026-11-10.
 
 ### whatsapp-pin
-- Título: Clave de WhatsApp
+- Título: PIN/Contraseña en WhatsApp
 - Minutos: 3
 - Por qué: Es la "verificación en dos pasos": aunque alguien consiga tu código por SMS, no puede usar tu WhatsApp sin tu clave.
 - Pasos:
