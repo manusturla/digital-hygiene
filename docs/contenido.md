@@ -11,7 +11,7 @@ Nombre de menú: las fuentes oficiales para Latinoamérica dicen "Configuración
 - Por qué: Si te arrancan el celu de la mano, se bloquea solo y es mucho más difícil que lo usen.
 - Pasos:
   - (común) Para que funcione, el celu tiene que tener un bloqueo de pantalla (PIN, patrón o huella).
-  - (Android) Abrí Configuración (o Ajustes), tocá la lupa 🔍 y escribí *Protección ante robo*. Entrá ahí. (Ruta larga: Google > Todos los servicios > Protección ante robo.)
+  - (Android) Abrí Configuración (o Ajustes), tocá la lupa 🔍 y escribí *Protección contra robo*. Entrá ahí. (Ruta larga: Google > Todos los servicios > Protección contra robo.)
   - (Android) Activá estas tres opciones (lista con interruptores ilustrativos):
     - Bloqueo por detección de robo
     - Bloqueo de dispositivo sin conexión
