@@ -107,3 +107,5 @@ footer { color: var(--muted); font-size: 1rem; padding-top: var(--gap); padding-
 .topbar span { padding: 4px 8px; border-radius: 8px; background: var(--ill-bg); }
 .topbar .sp { flex: 1; background: none; }
 .mini-t.big { font-size: 1.3rem; }
+.ill.shot { padding: 0; background: none; }
+.ill.shot img { display: block; width: 100%; height: auto; border-radius: 14px; border: 1px solid var(--line); }
