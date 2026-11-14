@@ -1,6 +1,6 @@
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
-import * as L from '../site/logic.js';
+import * as L from '../src/js/logic.js';
 
 const mem = (init = {}) => ({ s: { ...init }, getItem(k) { return this.s[k] ?? null; }, setItem(k, v) { this.s[k] = v; } });
 const broken = { getItem() { throw new Error('denied'); }, setItem() { throw new Error('denied'); } };

@@ -1,0 +1,7 @@
+/* emergencia */
+.em-steps { list-style: none; padding: 0; margin: var(--gap) 0; counter-reset: em; }
+.em-step { counter-increment: em; background: var(--card); border: 1px solid var(--line); border-radius: var(--radius); padding: var(--gap); margin: 0 0 var(--gap); }
+.em-step h2 { margin-top: 0; }
+.em-step h2::before { content: counter(em) ". "; }
+.em-step .btn { margin: .5rem 0; }
+@media (min-width: 700px) { body { font-size: 19px; } }

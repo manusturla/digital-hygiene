@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="es-AR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>No te regalés</title>
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="style.css?v={{v}}">
+</head>
+<body>
+<header>
+<h1>No te regalés<img src="favicon.svg" alt="" class="logo" width="32" height="32"></h1>
+<p>Protegete de las estafas y robos con unos simples pasos.</p>
+</header>
+<main>
+<section id="core">
+<h2>Empezá por acá</h2>
+<p class="counter">3 tareas · ~15 min</p>
+
+<!--include tareas/antirrobo.html-->
+
+<!--include tareas/whatsapp-pin.html-->
+
+<!--include tareas/mercadopago.html-->
+</section>
+
+<section id="optional">
+<h2>¿Querés más protección?</h2>
+
+<!--include tareas/mp-confianza.html-->
+<!--include tareas/navegador.html-->
+
+<!--include tareas/frases.html-->
+
+<!--include tareas/gestor.html-->
+
+<!--include tareas/gmail-2fa.html-->
+</section>
+
+<p class="warning">Nadie de un banco, Mercado Pago o WhatsApp te va a pedir un código por teléfono. Si te lo piden, cortá.</p>
+</main>
+<a class="sos" href="emergencia/" aria-label="¿Te robaron el celu o te estafaron? Qué hacer ya"><span class="sos-icon" aria-hidden="true">!</span><span class="sos-text" aria-hidden="true">¿Te robaron el celu o te estafaron?</span></a>
+<!--include partials/footer.html-->
+<script type="module" src="app.js?v={{v}}"></script>
+</body>
+</html>

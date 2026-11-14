@@ -1,0 +1,52 @@
+/* utilidades y modo guía (JS) */
+[hidden] { display: none !important; }
+.js .task > .steps, .js .task > .win { display: none; }
+.min { color: var(--muted); margin: 0 0 .25rem; font-size: 1rem; }
+.actions { display: grid; gap: 8px; margin-top: 12px; }
+.status { color: var(--ok); font-weight: 700; }
+.guide h3 { font-size: 1.3rem; }
+.guide .step-count { color: var(--muted); font-size: 1rem; font-weight: 600; letter-spacing: .02em; margin: 16px 0 2px; }
+.guide .done-screen { text-align: center; display: grid; gap: 12px; }
+.guide .emoji { font-size: 3rem; line-height: 1; }
+.sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+/* Pasos: título, texto y aclaración (también sin JS) */
+.steps h4 { font-size: 1.1rem; line-height: 1.25; margin: 0 0 .25rem; }
+.steps p { margin: 0 0 .5rem; }
+.hint { color: var(--muted); }
+.guide .steps h4 { font-size: 1.5rem; margin: 2px 0 10px; }
+.guide .steps p { margin: 0 0 12px; }
+.guide .steps li:focus { outline: none; }
+.guide-top { display: flex; justify-content: space-between; align-items: center; gap: 12px; }
+.guide-top h3 { margin: 0; font-size: 1rem; font-weight: 400; color: var(--muted); text-align: right; }
+/* Dibujos simples de lo que se va a ver en pantalla (no son capturas) */
+.ill { margin: 0 0 .75rem; padding: 16px; border-radius: 18px; background: var(--ill-bg); display: flex; justify-content: center; }
+.mini { width: 100%; max-width: 280px; background: var(--card); border-radius: 16px; box-shadow: 0 6px 18px rgba(0,0,0,.12); padding: 10px 12px; font-size: 1rem; }
+.mini-t { font-weight: 700; margin-bottom: 6px; }
+.srch { display: flex; gap: 6px; align-items: center; border: 2px solid var(--accent); border-radius: 999px; padding: 5px 12px; }
+.res { margin-top: 8px; padding: 7px 10px; border-radius: 8px; background: var(--hl); font-weight: 600; }
+.mini .row { display: flex; justify-content: space-between; align-items: center; gap: 12px; padding: 8px 4px; border-bottom: 1px solid var(--line); }
+.mini .row:last-child { border-bottom: 0; }
+.mini .row.hl { background: var(--hl); border-radius: 8px; padding-left: 8px; padding-right: 8px; font-weight: 600; }
+.switch { flex: none; position: relative; width: 44px; height: 26px; border-radius: 13px; background: var(--ok); }
+.switch::after { content: ""; position: absolute; top: 3px; right: 3px; width: 20px; height: 20px; border-radius: 50%; background: #fff; }
+/* Barra inferior fija */
+.bar { position: fixed; left: 0; right: 0; bottom: 0; background: var(--bg); border-top: 1px solid var(--line); padding: 12px var(--gap) calc(12px + env(safe-area-inset-bottom)); }
+.bar-in { max-width: 640px; margin: 0 auto; display: flex; gap: 10px; }
+.pill { min-height: 52px; border-radius: 999px; font: inherit; font-weight: 700; padding: 0 20px; cursor: pointer; border: 2px solid transparent; }
+.pill.ghost { background: transparent; color: var(--fg); border-color: var(--line); }
+.pill.pri, .pill.go { flex: 1; }
+.pill.pri { background: var(--accent); color: var(--accent-fg); }
+.pill.go { background: var(--ok); color: #fff; }
+@media (prefers-color-scheme: dark) { .pill.go { color: #06210f; } }
+.in-guide header, .in-guide footer { display: none; }
+.guide-top h3:focus { outline: none; }
+.tiles { display: flex; gap: 6px; }
+.tiles span { flex: 1; text-align: center; padding: 10px 2px; border-radius: 10px; background: var(--ill-bg); font-size: .85rem; font-weight: 600; }
+.tiles .hl, .topbar .hl { background: var(--hl); outline: 2px solid var(--accent); }
+.topbar { display: flex; gap: 6px; align-items: center; margin-bottom: 6px; }
+.topbar span { padding: 4px 8px; border-radius: 8px; background: var(--ill-bg); }
+.topbar .sp { flex: 1; background: none; }
+.mini-t.big { font-size: 1.3rem; }
+.ill.shot { padding: 0; background: none; }
+/* La captura entera siempre entra en la pantalla: nunca más ancha que la columna ni más alta que ~40% del alto visible. */
+.ill.shot img { display: block; width: auto; height: auto; max-width: 100%; max-height: 40vh; max-height: 40dvh; margin: 0 auto; border-radius: 14px; border: 1px solid var(--line); }

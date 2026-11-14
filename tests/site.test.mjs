@@ -1,7 +1,7 @@
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
 import { readFileSync } from 'node:fs';
-const read = p => readFileSync(new URL('../site/' + p, import.meta.url), 'utf8');
+const read = p => readFileSync(new URL('../dist/' + p, import.meta.url), 'utf8');
 
 const PAGES = ['emergencia/index.html', 'index.html', '404.html'];
 for (const p of PAGES) {
@@ -56,8 +56,8 @@ test('index: emergencia relativa, aviso de códigos, recursos relativos', () => 
   const h = read('index.html');
   assert.match(h, /<a class="sos" href="emergencia\/"/);
   assert.match(h, /te va a pedir un código por teléfono/);
-  assert.match(h, /href="style\.css\?v=\d+"/);
-  assert.match(h, /<script type="module" src="app\.js\?v=\d+">/);
+  assert.match(h, /href="style\.css\?v=[0-9a-f]+"/);
+  assert.match(h, /<script type="module" src="app\.js\?v=[0-9a-f]+">/);
 });
 test('index: cada tarea tiene pasos y win; cada paso tiene h4', () => {
   for (const sec of sections(read('index.html'))) {

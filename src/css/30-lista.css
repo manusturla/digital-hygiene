@@ -1,0 +1,21 @@
+main { padding-bottom: 80px; }
+.counter { color: var(--muted); margin: 0 0 var(--gap); }
+.task { background: var(--card); border: 1px solid var(--line); border-radius: var(--radius); padding: var(--gap); margin: 0 0 var(--gap); }
+.task.done { border-color: var(--ok); background: var(--ok-bg); }
+.why { color: var(--muted); }
+.steps { padding-left: 1.4rem; margin: .75rem 0; }
+.steps li { margin: .6rem 0; }
+.steps .btn { margin: .5rem 0; width: auto; display: inline-flex; }
+.os-label { font-weight: 700; }
+.js .os-label { display: none; }
+.win { background: var(--ok-bg); border-left: 4px solid var(--ok); padding: 8px 12px; border-radius: 6px; }
+.warning { background: var(--warn-bg); border: 1px solid var(--warn-line); border-radius: var(--radius); padding: 12px var(--gap); margin: var(--gap) 0; }
+.os-tabs { display: flex; gap: 8px; margin: .5rem 0; }
+.os-tabs button { flex: 1; min-height: 44px; font: inherit; border: 2px solid var(--accent); background: transparent; color: var(--accent); border-radius: var(--radius); cursor: pointer; }
+.os-tabs button[aria-pressed="true"] { background: var(--accent); color: var(--accent-fg); }
+.progress { height: 6px; background: var(--line); border-radius: 3px; overflow: hidden; margin: 0; }
+.progress > span { display: block; height: 100%; background: var(--ok); }
+.guide { display: grid; gap: 12px; padding-bottom: 110px; }
+.guide .steps { list-style: none; padding: 0; }
+.back { display: inline-flex; align-items: center; min-height: 44px; padding: 0; border: 0; background: none; color: var(--accent); font: inherit; font-weight: 600; cursor: pointer; white-space: nowrap; flex: none; }
+footer { color: var(--muted); font-size: 1rem; padding-top: var(--gap); padding-bottom: 32px; }
