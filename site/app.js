@@ -10,6 +10,12 @@ function fallback() {
 }
 const safe = fn => (...a) => { try { return fn(...a); } catch (e) { console.error(e); fallback(); } };
 
+// Íconos simples (currentColor) para la pregunta de sistema.
+const OS_ICON = {
+  android: '<svg viewBox="0 0 24 24" width="32" height="32" aria-hidden="true"><path fill="currentColor" d="M5.5 10h13v8a1.5 1.5 0 0 1-1.5 1.5h-1V22a1.250 1.250 0 0 1-2.500 0v-2.500h-3V22a1.250 1.250 0 0 1-2.500 0v-2.500H7A1.500 1.500 0 0 1 5.500 18zM3.500 10.500a1.250 1.250 0 0 1 2.500 0v5.500a1.250 1.250 0 0 1-2.500 0zm14.500 0a1.250 1.250 0 0 1 2.500 0V16a1.250 1.250 0 0 1-2.500 0zM6 9a6 6 0 0 1 12 0zm3.800-5.600L8.600 1.600m5.600 1.800 1.200-1.800" /><path stroke="currentColor" stroke-width="1.200" stroke-linecap="round" d="M9 3.500 7.800 1.700M15 3.500l1.200-1.800"/><circle cx="9.500" cy="6.500" r=".9" fill="#fff"/><circle cx="14.500" cy="6.500" r=".9" fill="#fff"/></svg>',
+  ios: '<svg viewBox="0 1.500 24 24" width="32" height="32" aria-hidden="true"><path fill="currentColor" d="M16.400 12.600c0-2.300 1.900-3.400 2-3.500-1.100-1.600-2.800-1.800-3.400-1.800-1.400-.15-2.800.85-3.500.85s-1.800-.8-3-.8c-1.500 0-3 .9-3.800 2.300-1.600 2.800-.4 7 1.200 9.300.8 1.100 1.700 2.400 2.900 2.350 1.200-.05 1.600-.75 3-.75s1.800.75 3.050.7c1.250-.02 2.050-1.150 2.800-2.300.9-1.300 1.250-2.550 1.270-2.600-.03-.01-2.450-.95-2.450-3.750zM14.200 5.700c.65-.8 1.100-1.900.95-3-.95.04-2.100.64-2.780 1.430-.6.700-1.150 1.850-1 2.900 1.050.08 2.150-.55 2.830-1.330z"/></svg>',
+};
+
 try {
   let storage = null;
   try { storage = window.localStorage; } catch {}
@@ -64,6 +70,7 @@ try {
     t.go.addEventListener('click', safe(() => { fromList = true; location.hash = 'hacer-' + t.id; }));
     t.el.querySelector('h3').after(h('p', { className: 'min', textContent: `~${t.min} min` }));
     t.el.append(h('div', { className: 'actions' }, t.status, t.go));
+    if (!t.core) t.el.addEventListener('click', e => { if (!t.go.contains(e.target)) t.go.click(); });
   }
   let fromList = false;
 
@@ -84,7 +91,9 @@ try {
       t.el.classList.toggle('done', done);
       t.status.hidden = !done;
       t.go.className = done ? 'btn-ghost' : 'btn';
-      t.go.textContent = done ? 'Ver de nuevo' : 'Hacerlo ahora →';
+      if (t.core) t.go.textContent = done ? 'Ver de nuevo' : 'Hacerlo ahora →';
+      else t.go.innerHTML = `<svg viewBox="0 0 24 24" width="28" height="28" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="3.500" stroke-linecap="round" stroke-linejoin="round"><path d="${done ? 'M4 12.500l5 5L20 6.500' : 'M4 12h16M13 5l7 7-7 7'}"/></svg>`;
+      if (!t.core) t.go.setAttribute('aria-label', `${done ? 'Ver de nuevo' : 'Hacer'}: ${t.title}`);
     }
     const firstPending = coreTasks.find(t => !state.done.includes(t.id));
     coreTasks.forEach((t, i) => {
@@ -135,16 +144,22 @@ try {
       return focusTitle(title);
     }
 
+    const needsOS = t.steps.some(s => s.os);
+    // Primera vez en una guía con pasos por sistema: se pregunta una vez y se recuerda.
+    if (needsOS && state.os == null) {
+      const pick = v => safe(() => { state.os = v; save(); drawGuide(t, 0, 'steps'); });
+      const order = defaultOS === 'ios' ? [['ios', 'iPhone'], ['android', 'Android']] : [['android', 'Android'], ['ios', 'iPhone']];
+      guideRoot.append(h('div', { className: 'os-pick' }, h('h4', { textContent: '¿Qué celu tenés?' }),
+        h('p', { textContent: 'Los pasos cambian según el celu.' }),
+        ...order.map(([v, label]) => { const b = h('button', { type: 'button', className: 'btn', innerHTML: `${OS_ICON[v]}<span>${label}</span>` }); b.addEventListener('click', pick(v)); return b; })));
+      return focusTitle(title);
+    }
     const steps = stepsFor(t.steps, os());
-    if (t.steps.some(s => s.os)) {
-      const tabs = h('div', { className: 'os-tabs' });
-      for (const [v, label] of [['android', 'Android'], ['ios', 'iPhone']]) {
-        const b = h('button', { type: 'button', textContent: label });
-        b.setAttribute('aria-pressed', String(os() === v));
-        b.addEventListener('click', safe(() => { state.os = v; save(); drawGuide(t, 0, 'steps', false, true); }));
-        tabs.append(b);
-      }
-      guideRoot.append(tabs);
+    if (needsOS) {
+      const other = os() === 'android' ? ['ios', 'iPhone'] : ['android', 'Android'];
+      const sw = h('button', { type: 'button', textContent: `Cambiar a ${other[1]}` });
+      sw.addEventListener('click', safe(() => { state.os = other[0]; save(); drawGuide(t, 0, 'steps', false, true); }));
+      guideRoot.append(h('p', { className: 'os-line' }, `Pasos para ${os() === 'android' ? 'Android' : 'iPhone'} · `, sw));
     }
     const last = step === steps.length - 1;
     const isDone = state.done.includes(t.id);

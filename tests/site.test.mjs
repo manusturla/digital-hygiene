@@ -57,7 +57,7 @@ test('index: emergencia relativa, aviso de códigos, recursos relativos', () => 
   assert.match(h, /<a class="sos" href="emergencia\/"/);
   assert.match(h, /te va a pedir un código por teléfono/);
   assert.match(h, /href="style\.css\?v=\d+"/);
-  assert.match(h, /<script type="module" src="app\.js">/);
+  assert.match(h, /<script type="module" src="app\.js\?v=\d+">/);
 });
 test('index: cada tarea tiene pasos y win; cada paso tiene h4', () => {
   for (const sec of sections(read('index.html'))) {
