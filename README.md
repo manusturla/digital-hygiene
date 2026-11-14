@@ -1,4 +1,4 @@
-# Protección digital 101
+# No te regalés
 
 Sitio estático (HTML, CSS y JS vanilla, sin build ni dependencias) con un checklist de 3 tareas de protección para celulares, opcionales y una página de emergencia (`/emergencia/`) que funciona sin JavaScript. Todo lo publicable está en `site/`.
 

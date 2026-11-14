@@ -18,6 +18,8 @@ body { margin: 0; background: var(--bg); color: var(--fg); font: 18px/1.5 system
 main, header, footer { max-width: 640px; margin: 0 auto; padding: 0 var(--gap); }
 header { padding-top: var(--gap); }
 h1 { font-size: 1.6rem; line-height: 1.2; margin: 1rem 0 .5rem; }
+h1:has(.logo) { display: flex; align-items: center; gap: .5rem; }
+h1 .logo { width: 1.2em; height: 1.2em; flex: none; }
 h2 { font-size: 1.3rem; margin: 1.5rem 0 .5rem; }
 h3 { font-size: 1.15rem; margin: 0 0 .25rem; }
 p { margin: .5rem 0; }
@@ -39,8 +41,8 @@ a { color: var(--accent); }
 .sos-text { overflow: hidden; line-height: 1.2; max-height: 2.4em; width: max-content; max-width: min(17em, calc(100vw - 120px)); animation: sos-text 1s cubic-bezier(.65,0,.35,1) 2.5s forwards; }
 @keyframes sos-shrink { to { padding: 8px; gap: 0; } }
 @keyframes sos-text { 35% { opacity: 0; } to { max-width: 0; opacity: 0; } }
-@media (prefers-reduced-motion: reduce) { .sos, .sos-text { animation-duration: .01s; } }
-.in-guide .sos { bottom: calc(96px + env(safe-area-inset-bottom)); }
+/* Dentro de una tarea el botón de emergencia se oculta: la barra de acciones ya ocupa el lugar. */
+.in-guide .sos { display: none; }
 main { padding-bottom: 80px; }
 .counter { color: var(--muted); margin: 0 0 var(--gap); }
 .task { background: var(--card); border: 1px solid var(--line); border-radius: var(--radius); padding: var(--gap); margin: 0 0 var(--gap); }
