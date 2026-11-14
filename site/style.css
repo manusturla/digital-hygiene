@@ -134,3 +134,18 @@ footer { color: var(--muted); font-size: 1rem; padding-top: var(--gap); padding-
 .stepper .done button { color: var(--fg); }
 .stepper .current .dot { border-color: var(--accent); color: var(--accent); }
 .stepper .current button { color: var(--fg); font-weight: 600; }
+/* Jerarquía: las 3 principales son tarjetas numeradas; lo opcional, filas compactas y más abajo */
+#core { counter-reset: core; }
+#core .task { counter-increment: core; border: 2px solid var(--accent); box-shadow: 0 2px 12px rgba(0,0,0,.14); }
+#core .task.done { border-color: var(--ok); }
+#core .task h3::before { content: counter(core); display: inline-grid; place-items: center; width: 1.7em; height: 1.7em; margin-right: .5em; border-radius: 50%; background: var(--accent); color: var(--accent-fg); font-size: .9em; }
+#core .task.done h3::before { background: var(--ok); color: var(--accent-fg); }
+#optional { margin-top: 3rem; padding-top: 1.5rem; border-top: 2px dashed var(--line); }
+#optional h2 { margin-top: 0; font-size: 1.15rem; color: var(--muted); }
+.js #optional .task { display: grid; grid-template-columns: 1fr auto; column-gap: var(--gap); align-items: center; background: transparent; padding: 10px 14px; margin: 0 0 8px; }
+.js #optional .task.done { background: var(--ok-bg); }
+.js #optional .task h3 { grid-column: 1; font-size: 1.05rem; margin: 0; }
+.js #optional .task .min { grid-column: 1; margin: 0; }
+.js #optional .task .why { display: none; }
+.js #optional .task .actions { grid-column: 2; grid-row: 1 / span 2; margin: 0; }
+.js #optional .task .btn { background: transparent; color: var(--accent); border: 2px solid var(--accent); }

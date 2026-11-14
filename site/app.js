@@ -101,6 +101,14 @@ try {
     else { history.replaceState(null, '', location.pathname + location.search); render(); }
   }
 
+  // Las opcionales no cuentan para las 3 principales: se informa aparte para no confundir.
+  const progressText = t => {
+    if (t.core) return `Ya hiciste ${nCore()} de ${coreIds.length}`;
+    const opt = countDone(state.done, optIds);
+    const extra = `Opcionales: ${opt} de ${optIds.length}`;
+    return nCore() === coreIds.length ? `Tus 3 principales están listas ✓ · ${extra}` : `Principales: ${nCore()} de ${coreIds.length} · ${extra}`;
+  };
+
   function drawGuide(t, step, screen, congrats, focusStep) {
     guideRoot.replaceChildren();
     const back = h('button', { type: 'button', className: 'back', textContent: '← Lista' });
@@ -113,7 +121,7 @@ try {
       const box = h('div', { className: 'done-screen' },
         h('div', { className: 'emoji', textContent: '🎉' }),
         h('p', { className: 'win', textContent: t.win }),
-        h('p', { textContent: `Ya hiciste ${nCore()} de ${coreIds.length}` }));
+        h('p', { textContent: progressText(t) }));
       if (congrats) box.append(h('p', { className: 'win', textContent: '¡Ya estás más protegido! Si querés, seguí con las opcionales.' }));
       if (next) {
         const b = h('button', { type: 'button', className: 'btn', textContent: `Seguir: ${byId[next].title} →` });
