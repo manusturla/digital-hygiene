@@ -56,7 +56,7 @@ test('index: emergencia relativa, aviso de códigos, recursos relativos', () => 
   const h = read('index.html');
   assert.match(h, /<a class="sos" href="emergencia\/"/);
   assert.match(h, /te va a pedir un código por teléfono/);
-  assert.match(h, /href="style\.css"/);
+  assert.match(h, /href="style\.css\?v=\d+"/);
   assert.match(h, /<script type="module" src="app\.js">/);
 });
 test('index: cada tarea tiene pasos y win; cada paso tiene h4', () => {
@@ -80,4 +80,10 @@ test('mercadopago: sin cuenta se toca ¡Terminé!, y avisa antes de cancelar el 
 test('stepper: cada tarea principal tiene nombre corto', () => {
   for (const sec of sections(read('index.html')).filter(s => s.includes('data-kind="core"')))
     assert.match(sec, /data-short="[^"]+"/);
+});
+test('favicon existe y está enlazado; el botón de emergencia solo en index', () => {
+  assert.match(read('index.html'), /rel="icon" href="favicon\.svg"/);
+  assert.match(read('404.html'), /rel="icon" href="\/favicon\.svg"/);
+  assert.match(read('emergencia/index.html'), /rel="icon" href="\/favicon\.svg"/);
+  assert.doesNotMatch(read('404.html'), /class="sos"/);
 });
