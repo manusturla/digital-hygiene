@@ -39,7 +39,7 @@ Requiere Node 20 o más nuevo.
 
 **Cloudflare Pages:** conectá el repo, poné `npm run build` como build command y `dist` como output directory. Después conectá tu dominio propio (corto y fácil de tipear: en una emergencia hay que escribirlo en otro dispositivo).
 
-**GitHub Pages (alternativa):** publicá `dist/` con GitHub Actions (ver `.github/workflows/pages.yml`: corre `npm test`, que ya construye, y sube `path: dist`).
+**GitHub Pages (alternativa):** publicá `dist/` con GitHub Actions (ver `.github/workflows/pages.yml`: `npm run build`, `npm test` y sube `path: dist`).
 
 `404.html` usa rutas absolutas (`/`, `/emergencia/`): asume dominio propio.
 
