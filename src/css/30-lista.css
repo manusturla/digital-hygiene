@@ -19,3 +19,6 @@ main { padding-bottom: 80px; }
 .guide .steps { list-style: none; padding: 0; }
 .back { display: inline-flex; align-items: center; min-height: 44px; padding: 0; border: 0; background: none; color: var(--accent); font: inherit; font-weight: 600; cursor: pointer; white-space: nowrap; flex: none; }
 footer { color: var(--muted); font-size: 1rem; padding-top: var(--gap); padding-bottom: 32px; }
+/* Botón que abre otra app o página: con contorno y ↗, distinto del "siguiente" lleno */
+.steps a.btn { background: transparent; color: var(--accent); border-color: var(--accent); }
+.steps a.btn::after { content: "\2197"; margin-left: .5em; }

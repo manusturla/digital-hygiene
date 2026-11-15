@@ -50,7 +50,7 @@ const sections = h => h.split('<section class="task"').slice(1);
 test('index: 3 principales en orden y 4 opcionales', () => {
   const ids = [...read('index.html').matchAll(/<section class="task" id="([^"]+)" data-kind="(core|optional)"/g)].map(m => m[1] + ':' + m[2]);
   assert.deepEqual(ids, ['antirrobo:core', 'whatsapp-pin:core', 'mercadopago:core',
-    'mp-confianza:optional', 'navegador:optional', 'frases:optional', 'gestor:optional', 'gmail-2fa:optional']);
+    'mp-confianza:optional', 'gmail-2fa:optional', 'gestor:optional', 'frases:optional', 'navegador:optional']);
 });
 test('index: emergencia relativa, aviso de códigos, recursos relativos', () => {
   const h = read('index.html');
@@ -63,7 +63,7 @@ test('index: cada tarea tiene pasos y win; cada paso tiene h4', () => {
   for (const sec of sections(read('index.html'))) {
     assert.match(sec, /<ol class="steps">/);
     assert.match(sec, /<p class="win">/);
-    const lis = sec.match(/<li[^>]*>[\s\S]*?<\/li>/g);
+    const lis = sec.replace(/<ul>[\s\S]*?<\/ul>/g, '').match(/<li[^>]*>[\s\S]*?<\/li>/g);
     for (const l of lis) assert.match(l, /<h4>(<span[^>]*>[^<]*<\/span>)? ?[^<]+<\/h4>/);
   }
 });
