@@ -89,5 +89,5 @@ test('favicon existe y está enlazado; el botón de emergencia solo en index', (
 });
 test('links externos abren en pestaña nueva con noopener', () => {
   for (const p of PAGES) for (const a of read(p).match(/<a [^>]*href="https?:\/\/[^"]*"[^>]*>/g) ?? [])
-    assert.match(a, /target="_blank" rel="noopener"/, a);
+    assert.match(a, /target="_blank"\s+rel="noopener"/, a);
 });
