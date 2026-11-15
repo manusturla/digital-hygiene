@@ -19,13 +19,24 @@ src/
   partials/footer.html                footer y fecha "Revisado", una sola vez
   css/NN-*.css                        se concatenan por orden alfabético en style.css
   js/                                 app.js y logic.js (módulos nativos)
-  public/                             favicon e imágenes, se copian tal cual
+  public/                             favicon, og.png e imágenes, se copian tal cual
 build.mjs                             src/ → dist/
 ```
 
 ## Editar contenido
 
 Cada tarea es `src/tareas/<id>.html`; para agregar una, creá el archivo e incluilo en `src/index.html`. Si cambiás algo, actualizá "Revisado: <mes año>" en `src/partials/footer.html`. Mantené el marcado de las tareas: `app.js` y los tests lo leen.
+
+## Vista previa al compartir (WhatsApp, redes)
+
+Título, descripción e imagen salen de las etiquetas `og:*` del `<head>` de `src/index.html` y `src/emergencia/index.html`. La imagen es `src/public/og.png` (1200×630, PNG: WhatsApp no acepta SVG). Para cambiarla, editá `docs/og-image.svg` y regenerala:
+
+```bash
+chromium --headless --no-sandbox --hide-scrollbars --window-size=1200,630 \
+  --screenshot=src/public/og.png file://$PWD/docs/og-image.svg
+```
+
+Si cambiás el tiempo de las tareas principales, actualizá "15 minutos" en la descripción y en el SVG. WhatsApp guarda la vista previa de cada link: para ver un cambio, compartí el link con un parámetro nuevo (`?v=2`).
 
 ## Tests
 
