@@ -125,7 +125,6 @@ Aviso: Nadie de un banco, Mercado Pago o WhatsApp te va a pedir un código por t
    - Claro: 0800 123 0611 (https://asistencia.claro.com.ar/asistencia/servicios-en-tu-celu/soporte/que-hago-si-me-robaron-o-perdi-mi-celular)
    - Movistar: 0800 321 0611 (https://ayuda.movistar.com.ar/pregunta/que-hacer-si-me-robaron-o-perdi-el-equipo-yo-chip.html)
    - Personal: usá el *910 (su número propio no tuvo fuente oficial: VERIFICAR.md).
-   - Si tu línea es prepaga, después registrala marcando *234# para no perderla (ENACOM).
 3. Mercado Pago y bancos.
    - Mercado Pago: iniciá sesión desde otro dispositivo y reportá el robo desde Ayuda y Seguridad > "Me robaron" (no verificado si anda sin sesión: VERIFICAR.md). Si elegiste una persona de confianza, pedile que avise a Mercado Pago desde su app. (https://www.mercadopago.com.ar/ato-complaint/classifier?origin=SECURITY_HELP_MENU&step=1). Fuente: mercadopago.com.ar/seguridad.
    - Bancos: llamá al número que figura al dorso de tu tarjeta.
