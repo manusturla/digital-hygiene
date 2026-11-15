@@ -5,3 +5,13 @@
 .em-step h2::before { content: counter(em) ". "; }
 .em-step .btn { margin: .5rem 0; }
 @media (min-width: 700px) { body { font-size: 19px; } }
+/* Índice: muestra de un vistazo los 6 pasos */
+.em-index ol { list-style: none; padding: 0; margin: var(--gap) 0 0; display: flex; flex-wrap: wrap; gap: 8px; counter-reset: ix; }
+.em-index li { counter-increment: ix; }
+.em-index a { display: flex; align-items: center; gap: 6px; min-height: 44px; padding: 6px 12px; border: 1px solid var(--line); border-radius: 999px; background: var(--card); color: inherit; font-weight: 600; text-decoration: none; }
+.em-index a::before { content: counter(ix); display: grid; place-items: center; width: 24px; height: 24px; border-radius: 50%; background: var(--accent); color: var(--accent-fg); font-size: .9rem; }
+.em-step { scroll-margin-top: 12px; }
+/* Casos dentro de un paso (ej. Mercado Pago / Bancos) */
+.em-case { margin-top: var(--gap); padding-top: var(--gap); border-top: 1px solid var(--line); }
+.em-case:first-of-type { border-top: 0; padding-top: 0; }
+.em-case h3 { margin: 0 0 .25rem; font-size: 1.15rem; }

@@ -1,68 +1,107 @@
 <!doctype html>
 <html lang="es-AR">
+
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Qué hacer ya</title>
-<link rel="icon" href="/favicon.svg" type="image/svg+xml">
-<link rel="stylesheet" href="../style.css">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Me robaron, ¿qué hago?</title>
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="../style.css">
 </head>
+
 <body>
-<header>
-<p><a class="back" href="../">← Volver al inicio</a></p>
-<h1>Qué hacer ya</h1>
-<p class="warning">Nadie de un banco, Mercado Pago o WhatsApp te va a pedir un código por teléfono. Si te lo piden, cortá.</p>
-<p>Andá en orden. Podés hacerlo desde otro celu o desde una compu.</p>
-</header>
-<main>
-<ol class="em-steps">
-<li class="em-step">
-<h2>Bloqueá el celu a distancia</h2>
-<p>Entrá con tu cuenta de Google o de Apple.</p>
-<p>Si en la tarea 1 activaste "Bloqueo remoto" en Android: entrá a <strong>android.com/lock</strong> desde cualquier compu o celu, escribí tu número de teléfono y resolvé el desafío. El celu se bloquea al conectarse a internet. Necesita que el chip siga con línea activa, por eso hacelo antes de llamar a tu compañía.</p>
-<a class="btn" href="https://www.google.com/android/find" target="_blank" rel="noopener">Android: Encontrar mi dispositivo</a>
-<p>Elegí tu celu y tocá "Marcar como perdido".</p>
-<a class="btn" href="https://www.icloud.com/find" target="_blank" rel="noopener">iPhone: Buscar en iCloud</a>
-<p>Elegí tu iPhone y activá "Modo perdido".</p>
-</li>
-<li class="em-step">
-<h2>Bloqueá la línea</h2>
-<p>Pedí bloquear la línea y el celu. Así nadie recibe tus códigos por SMS ni puede usar el equipo.</p>
-<p>Desde cualquier celular, marcá <strong>*910</strong> y elegí la <strong>opción 2</strong> (sirve para Personal, Claro y Movistar).</p>
-<a class="btn" href="tel:*910">Cualquier celular: *910</a>
-<p>También podés llamar a tu compañía:</p>
-<a class="btn" href="tel:08001230611">Claro: 0800 123 0611</a>
-<a class="btn" href="tel:08003210611">Movistar: 0800 321 0611</a>
-<a class="btn" href="tel:08004440800">Personal: 0800 444 0800</a>
-</li>
-<li class="em-step">
-<h2>Mercado Pago y bancos</h2>
-<p>Mercado Pago: iniciá sesión desde otro dispositivo, andá a Ayuda y Seguridad y elegí "Me robaron".</p>
-<a class="btn" href="https://www.mercadopago.com.ar/ato-complaint/classifier?origin=SECURITY_HELP_MENU&amp;step=1" target="_blank" rel="noopener">Reportar el robo en Mercado Pago</a>
-<p>Si elegiste una persona de confianza, pedile que avise a Mercado Pago desde su app.</p>
-<p>Bancos: llamá al número que figura al dorso de tu tarjeta y pedí bloquearla.</p>
-</li>
-<li class="em-step">
-<h2>WhatsApp</h2>
-<p>WhatsApp no puede desactivar tu cuenta a distancia. Lo que sí funciona: con la línea ya bloqueada, pedí un chip nuevo con el mismo número, activalo y volvé a registrar WhatsApp. Se cierra solo en el celu robado.</p>
-<p>Avisá a tus contactos que no respondan pedidos de plata que vengan de tu número.</p>
-<a class="btn btn-ghost" href="https://faq.whatsapp.com/1007324800132703" target="_blank" rel="noopener">Ver la guía de WhatsApp</a>
-</li>
-<li class="em-step">
-<h2>Cambiá la contraseña de tu Gmail</h2>
-<p>Hacelo desde otro dispositivo. Entrá, andá a Seguridad (puede decir "Seguridad y acceso") y tocá Contraseña.</p>
-<a class="btn" href="https://myaccount.google.com/" target="_blank" rel="noopener">Mi cuenta de Google</a>
-<p>Si no te acordás de la contraseña:</p>
-<a class="btn btn-ghost" href="https://accounts.google.com/signin/recovery" target="_blank" rel="noopener">Recuperar mi cuenta</a>
-</li>
-<li class="em-step">
-<h2>Hacé la denuncia</h2>
-<p>Hacé la denuncia policial y anotá el número.</p>
-<p>El IMEI es el número único de tu celu, como su documento. El *910 ya lo bloquea. Para verlo, marcá *#06# en el celu, o buscalo en la caja.</p>
-</li>
-</ol>
-<p><a class="btn btn-ghost" href="../">← Volver al inicio</a></p>
-</main>
-<!--include partials/footer.html-->
+    <header>
+        <p><a class="back" href="../">← Volver al inicio</a></p>
+        <h1>Me robaron, ¿qué hago?</h1>
+        <p class="warning">Nadie de un banco, Mercado Pago o WhatsApp te va a pedir un código por teléfono. Si te lo
+            piden, cortá.</p>
+        <p>Andá en orden. Podés hacerlo desde otro celu o desde una compu.</p>
+        <nav class="em-index" aria-label="Los 6 pasos">
+            <ol>
+                <li><a href="#celu">Celu</a></li>
+                <li><a href="#linea">Línea</a></li>
+                <li><a href="#plata">Banco</a></li>
+                <li><a href="#whatsapp">WhatsApp</a></li>
+                <li><a href="#gmail">Gmail</a></li>
+                <li><a href="#denuncia">Denuncia</a></li>
+            </ol>
+        </nav>
+    </header>
+    <main>
+        <ol class="em-steps">
+            <li class="em-step" id="celu">
+                <h2>Bloqueá el celu a distancia</h2>
+                <p>Entrá con tu cuenta de Google o de Apple.</p>
+                <p>Si en la tarea 1 activaste "Bloqueo remoto" en Android: entrá a <strong>android.com/lock</strong>
+                    desde cualquier compu o celu, escribí tu número de teléfono y resolvé el desafío. El celu se bloquea
+                    al conectarse a internet. Necesita que el chip siga con línea activa, por eso hacelo antes de llamar
+                    a tu compañía.</p>
+                <a class="btn" href="https://www.google.com/android/find" target="_blank" rel="noopener">Android:
+                    Encontrar mi dispositivo</a>
+                <p>Elegí tu celu y tocá "Marcar como perdido".</p>
+                <a class="btn" href="https://www.icloud.com/find" target="_blank" rel="noopener">iPhone: Buscar en
+                    iCloud</a>
+                <p>Elegí tu iPhone y activá "Modo perdido".</p>
+            </li>
+            <li class="em-step" id="linea">
+                <h2>Bloqueá la línea</h2>
+                <p>Pedí bloquear la línea y el celu. Así nadie recibe tus códigos por SMS ni puede usar el equipo.</p>
+                <p>Desde cualquier celular, marcá <strong>*910</strong> y elegí la <strong>opción 2</strong> (sirve para
+                    Personal, Claro y Movistar).</p>
+                <a class="btn" href="tel:*910">Cualquier celular: *910</a>
+                <p>También podés llamar a tu compañía:</p>
+                <a class="btn" href="tel:08001230611">Claro: 0800 123 0611</a>
+                <a class="btn" href="tel:08003210611">Movistar: 0800 321 0611</a>
+                <a class="btn" href="tel:08004440800">Personal: 0800 444 0800</a>
+            </li>
+            <li class="em-step" id="plata">
+                <h2>Mercado Pago y bancos</h2>
+                <section class="em-case">
+                    <h3>Mercado Pago</h3>
+                    <p>Si elegiste una <strong>persona de confianza</strong>, pedile que avise a Mercado Pago desde su
+                        celu. Tiene que entrar a la misma pantalla donde se agregan las personas de confianza:</p>
+                    <a class="btn btn-ghost"
+                        href="https://www.mercadopago.com.ar/onlinepayments/universal-link?fallback=https%3A%2F%2Fwww.mercadopago.com.ar%2Flinked-accounts%2Ftrusted-third-party&amp;android=mercadopago%3A%2F%2Flinked_accounts%2Ftrusted_third_party%3Furl%3Dhttps%253A%252F%252Fwww.mercadopago.com.ar%252Flinked-accounts%252Ftrusted-third-party&amp;ios=mercadopago%3A%2F%2Flinked_accounts%2Ftrusted_third_party%3Furl%3Dhttps%253A%252F%252Fwww.mercadopago.com.ar%252Flinked-accounts%252Ftrusted-third-party"
+                        target="_blank" rel="noopener">Abrir personas de confianza</a>
+                    <p>Si no, desde otro dispositivo: iniciá sesión, andá a Ayuda y Seguridad y elegí "Me robaron".</p>
+                    <a class="btn"
+                        href="https://www.mercadopago.com.ar/ato-complaint/classifier?origin=SECURITY_HELP_MENU&amp;step=1"
+                        target="_blank" rel="noopener">Reportar el robo en Mercado Pago</a>
+                </section>
+                <section class="em-case">
+                    <h3>Bancos</h3>
+                    <p>Llamá al número que figura al dorso de tu tarjeta y pedí bloquearla.</p>
+                </section>
+            </li>
+            <li class="em-step" id="whatsapp">
+                <h2>WhatsApp</h2>
+                <p>WhatsApp no puede desactivar tu cuenta a distancia. Si tenes el chip todavía activo: instalas
+                    Whatsapp nuevamente y te volves a registrar. Eso cierra el Whatsapp en el
+                    celu robado.</p>
+                <p>Avisá a tus contactos que no respondan pedidos de plata que vengan de tu número.</p>
+                <a class="btn btn-ghost" href="https://faq.whatsapp.com/1007324800132703" target="_blank"
+                    rel="noopener">Ver la guía de WhatsApp</a>
+            </li>
+            <li class="em-step" id="gmail">
+                <h2>Cambiá la contraseña de tu Gmail</h2>
+                <p>Hacelo desde otro dispositivo. Entrá, andá a Seguridad (puede decir "Seguridad y acceso") y tocá
+                    Contraseña.</p>
+                <a class="btn" href="https://myaccount.google.com/" target="_blank" rel="noopener">Mi cuenta de
+                    Google</a>
+                <p>Si no te acordás de la contraseña:</p>
+                <a class="btn btn-ghost" href="https://accounts.google.com/signin/recovery" target="_blank"
+                    rel="noopener">Recuperar mi cuenta</a>
+            </li>
+            <li class="em-step" id="denuncia">
+                <h2>Hacé la denuncia</h2>
+                <p>Hacé la denuncia policial y anotá el número.</p>
+                <p>El IMEI es el número único de tu celu, como su documento. El *910 ya lo bloquea. Para verlo, marcá
+                    *#06# en el celu, o buscalo en la caja.</p>
+            </li>
+        </ol>
+        <p><a class="btn btn-ghost" href="../">← Volver al inicio</a></p>
+    </main>
+    <!--include partials/footer.html-->
 </body>
+
 </html>
