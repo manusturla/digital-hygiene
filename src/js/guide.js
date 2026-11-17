@@ -81,7 +81,7 @@ export function createGuide({ root, live, catalog, store, goList, onDone }) {
     }));
     const inner = h('div', { className: 'bar-in' }, prev, nxt);
     if (steps[step + 1]?.alt) {
-      const fail = h('button', { type: 'button', className: 'pill ghost fail', textContent: 'No me funciona' });
+      const fail = h('button', { type: 'button', className: 'pill ghost fail', textContent: steps[step + 1].fail });
       fail.addEventListener('click', safe(() => { viaAlt = true; draw(t, step + 1, 'steps', false, true); }));
       inner.prepend(fail);
     }
