@@ -58,21 +58,25 @@ export function createGuide({ root, live, catalog, store, goList, onDone }) {
     const no = mainStepNo(steps, step);
     const stepText = `Paso ${no} de ${total}${isAlt ? ' · alternativa' : ''}`;
     live.textContent = stepText;
-    root.append(h('div', { className: 'progress' }, h('span', { style: `width:${(no / total) * 100}%` })));
+    const top = title.parentNode;
+    title.classList.add('sr-only'); // el nombre de la tarea queda solo para lectores de pantalla
+    const stepNo = h('span', { className: 'step-no', ariaHidden: 'true', textContent: isAlt ? `Paso ${no} · alternativa` : `Paso ${no} de ${total}` });
+    top.classList.add('has-meta');
+    top.append(stepNo);
     if (needsOS) {
       const other = store.os() === 'android' ? ['ios', 'iPhone'] : ['android', 'Android'];
-      const sw = h('button', { type: 'button', textContent: `Cambiar a ${other[1]}` });
+      const sw = h('button', { type: 'button', className: 'os-chip', textContent: `${store.os() === 'android' ? 'Android' : 'iPhone'} ⇄`, ariaLabel: `Pasos para ${store.os() === 'android' ? 'Android' : 'iPhone'}. Cambiar a ${other[1]}` });
       sw.addEventListener('click', safe(() => { store.setOS(other[0]); draw(t, 0, 'steps', false, true); }));
-      root.append(h('p', { className: 'os-line' }, `Pasos para ${store.os() === 'android' ? 'Android' : 'iPhone'} · `, sw));
+      top.append(sw);
     }
+    root.append(h('div', { className: 'progress' }, h('span', { style: `width:${(no / total) * 100}%` })));
     const ol = h('ol', { className: 'steps', start: no });
     const li = h('li', { tabIndex: -1, innerHTML: steps[step].fig });
-    li.append(h('div', { className: 'step-count', textContent: stepText.toUpperCase(), ariaHidden: 'true' }));
     li.insertAdjacentHTML('beforeend', steps[step].html);
     ol.append(li);
     let prevIdx = step - 1;
     if (prevIdx >= 0 && steps[prevIdx].alt && !viaAlt) prevIdx--;
-    const prev = h('button', { type: 'button', className: 'pill ghost', textContent: 'Atrás', hidden: prevIdx < 0 });
+    const prev = h('button', { type: 'button', className: 'pill ghost back-btn', textContent: '←', ariaLabel: 'Atrás', hidden: prevIdx < 0 });
     prev.addEventListener('click', safe(() => draw(t, prevIdx, 'steps', false, true)));
     const nxt = h('button', { type: 'button', className: 'pill ' + (last ? 'go' : 'pri'), textContent: last ? (isDone ? 'Volver a la lista' : '¡Terminé!') : 'Listo, siguiente' });
     nxt.addEventListener('click', safe(() => {
@@ -81,7 +85,7 @@ export function createGuide({ root, live, catalog, store, goList, onDone }) {
     }));
     const inner = h('div', { className: 'bar-in' }, prev, nxt);
     if (steps[step + 1]?.alt) {
-      const fail = h('button', { type: 'button', className: 'pill ghost fail', textContent: steps[step + 1].fail });
+      const fail = h('button', { type: 'button', className: 'fail', textContent: steps[step + 1].fail });
       fail.addEventListener('click', safe(() => { viaAlt = true; draw(t, step + 1, 'steps', false, true); }));
       inner.prepend(fail);
     }

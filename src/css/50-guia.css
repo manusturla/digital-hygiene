@@ -5,7 +5,6 @@
 .actions { display: grid; gap: 8px; margin-top: 12px; }
 .status { color: var(--ok); font-weight: 700; }
 .guide h3 { font-size: 1.3rem; }
-.guide .step-count { color: var(--muted); font-size: 1rem; font-weight: 600; letter-spacing: .02em; margin: 16px 0 2px; }
 .guide .done-screen { text-align: center; display: grid; gap: 12px; }
 .guide .emoji { font-size: 3rem; line-height: 1; }
 .sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
@@ -30,9 +29,10 @@
 .switch { flex: none; position: relative; width: 44px; height: 26px; border-radius: 13px; background: var(--ok); }
 .switch::after { content: ""; position: absolute; top: 3px; right: 3px; width: 20px; height: 20px; border-radius: 50%; background: #fff; }
 /* Barra inferior fija */
-.bar { position: fixed; left: 0; right: 0; bottom: 0; background: var(--bg); border-top: 1px solid var(--line); padding: 12px var(--gap) calc(12px + env(safe-area-inset-bottom)); }
-.bar-in { max-width: 640px; margin: 0 auto; display: flex; flex-wrap: wrap; gap: 10px; }
-.pill.fail { flex-basis: 100%; }
+.bar { position: fixed; left: 0; right: 0; bottom: 0; background: var(--bg); border-top: 1px solid var(--line); padding: 8px var(--gap) calc(10px + env(safe-area-inset-bottom)); }
+.bar-in { max-width: 640px; margin: 0 auto; display: flex; flex-wrap: wrap; gap: 4px 10px; }
+.fail { flex-basis: 100%; min-height: 40px; border: 0; background: none; color: var(--accent); font: inherit; font-weight: 600; text-decoration: underline; cursor: pointer; }
+.pill.back-btn { flex: none; width: 52px; padding: 0; font-size: 1.4rem; }
 .pill { min-height: 52px; border-radius: 999px; font: inherit; font-weight: 700; padding: 0 20px; cursor: pointer; border: 2px solid transparent; }
 .pill.ghost { background: transparent; color: var(--fg); border-color: var(--line); }
 .pill.pri, .pill.go { flex: 1; }
@@ -50,8 +50,13 @@
 .mini-t.big { font-size: 1.3rem; }
 .ill.shot { padding: 0; background: none; }
 /* La captura entera siempre entra en la pantalla: nunca más ancha que la columna ni más alta que ~40% del alto visible. */
-.ill.shot img { display: block; width: auto; height: auto; max-width: 100%; max-height: 40vh; max-height: 40dvh; margin: 0 auto; border-radius: 14px; border: 1px solid var(--line); }
+.ill.shot img { display: block; width: auto; height: auto; max-width: 100%; max-height: 45vh; max-height: 45dvh; margin: 0 auto; border-radius: 14px; border: 1px solid var(--line); }
 /* Barra del navegador abajo (Firefox, DuckDuckGo): bottom:0 la deja tapada. dvh sigue a la barra: se achica si aparece y crece si se esconde. */
 @supports (height: 100dvh) {
   .bar { bottom: auto; top: 100dvh; transform: translateY(-100%); }
 }
+/* Encabezado de la guía: una sola fila (volver · paso · sistema) */
+.guide-top.has-meta { display: grid; grid-template-columns: 1fr auto 1fr; }
+.step-no { color: var(--muted); font-size: 1rem; font-weight: 600; white-space: nowrap; text-align: center; }
+.os-chip { grid-column: 3; justify-self: end; min-height: 44px; padding: 0; border: 0; background: none; color: var(--accent); font: inherit; font-weight: 600; white-space: nowrap; cursor: pointer; }
+.guide-top + .progress { margin: -8px calc(-1 * var(--gap)) 0; border-radius: 0; height: 3px; }
