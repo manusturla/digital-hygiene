@@ -1,10 +1,11 @@
 // Modo guía: una tarea paso a paso (pregunta de sistema, pasos, pantalla final).
 import { h, safe, focusTitle } from './dom.js';
 import { OS_ICON } from './icons.js';
-import { stepsFor } from './logic.js';
+import { stepsFor, nextStep, mainStepNo } from './logic.js';
 
 export function createGuide({ root, live, catalog, store, goList, onDone }) {
   const { byId, coreIds, optIds } = catalog;
+  let viaAlt = false; // ¿el usuario pasó por el paso alternativo? (para que "Atrás" vuelva ahí)
 
   // Las opcionales no cuentan para las 3 principales: se informa aparte para no confundir.
   const progressText = t => {
@@ -49,27 +50,42 @@ export function createGuide({ root, live, catalog, store, goList, onDone }) {
 
   function drawSteps(t, step, title, needsOS, focusStep) {
     const steps = stepsFor(t.steps, store.os());
+    const nextIdx = nextStep(steps, step);
+    const last = nextIdx === -1;
+    const isAlt = steps[step].alt;
+    const isDone = store.isDone(t.id);
+    const total = steps.filter(x => !x.alt).length;
+    const no = mainStepNo(steps, step);
+    const stepText = `Paso ${no} de ${total}${isAlt ? ' · alternativa' : ''}`;
+    live.textContent = stepText;
+    root.append(h('div', { className: 'progress' }, h('span', { style: `width:${(no / total) * 100}%` })));
     if (needsOS) {
       const other = store.os() === 'android' ? ['ios', 'iPhone'] : ['android', 'Android'];
       const sw = h('button', { type: 'button', textContent: `Cambiar a ${other[1]}` });
       sw.addEventListener('click', safe(() => { store.setOS(other[0]); draw(t, 0, 'steps', false, true); }));
       root.append(h('p', { className: 'os-line' }, `Pasos para ${store.os() === 'android' ? 'Android' : 'iPhone'} · `, sw));
     }
-    const last = step === steps.length - 1;
-    const isDone = store.isDone(t.id);
-    const stepText = `Paso ${step + 1} de ${steps.length}`;
-    live.textContent = stepText;
-    root.append(h('div', { className: 'progress' }, h('span', { style: `width:${((step + 1) / steps.length) * 100}%` })));
-    const ol = h('ol', { className: 'steps', start: step + 1 });
+    const ol = h('ol', { className: 'steps', start: no });
     const li = h('li', { tabIndex: -1, innerHTML: steps[step].fig });
     li.append(h('div', { className: 'step-count', textContent: stepText.toUpperCase(), ariaHidden: 'true' }));
     li.insertAdjacentHTML('beforeend', steps[step].html);
     ol.append(li);
-    const prev = h('button', { type: 'button', className: 'pill ghost', textContent: 'Atrás', hidden: step === 0 });
-    prev.addEventListener('click', safe(() => draw(t, step - 1, 'steps', false, true)));
+    let prevIdx = step - 1;
+    if (prevIdx >= 0 && steps[prevIdx].alt && !viaAlt) prevIdx--;
+    const prev = h('button', { type: 'button', className: 'pill ghost', textContent: 'Atrás', hidden: prevIdx < 0 });
+    prev.addEventListener('click', safe(() => draw(t, prevIdx, 'steps', false, true)));
     const nxt = h('button', { type: 'button', className: 'pill ' + (last ? 'go' : 'pri'), textContent: last ? (isDone ? 'Volver a la lista' : '¡Terminé!') : 'Listo, siguiente' });
-    nxt.addEventListener('click', safe(() => last ? (isDone ? goList() : finish(t)) : draw(t, step + 1, 'steps', false, true)));
-    root.append(ol, h('div', { className: 'bar' }, h('div', { className: 'bar-in' }, prev, nxt)));
+    nxt.addEventListener('click', safe(() => {
+      if (!isAlt) viaAlt = false;
+      last ? (isDone ? goList() : finish(t)) : draw(t, nextIdx, 'steps', false, true);
+    }));
+    const inner = h('div', { className: 'bar-in' }, prev, nxt);
+    if (steps[step + 1]?.alt) {
+      const fail = h('button', { type: 'button', className: 'pill ghost fail', textContent: 'No me funciona' });
+      fail.addEventListener('click', safe(() => { viaAlt = true; draw(t, step + 1, 'steps', false, true); }));
+      inner.prepend(fail);
+    }
+    root.append(ol, h('div', { className: 'bar' }, inner));
     if (focusStep) { window.scrollTo(0, 0); li.focus(); } else focusTitle(title);
   }
 

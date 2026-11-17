@@ -41,3 +41,12 @@ test('stepsFor', () => {
   const s = [{ os: null, t: 'a' }, { os: 'android', t: 'b' }, { os: 'ios', t: 'c' }];
   assert.deepEqual(L.stepsFor(s, 'ios').map(x => x.t), ['a', 'c']);
 });
+
+test('nextStep / mainStepNo: el paso alt se saltea', () => {
+  const s = [{ alt: false }, { alt: true }, { alt: false }];
+  assert.equal(L.nextStep(s, 0), 2);
+  assert.equal(L.nextStep(s, 1), 2);
+  assert.equal(L.nextStep(s, 2), -1);
+  assert.equal(L.mainStepNo(s, 1), 1);
+  assert.equal(L.mainStepNo(s, 2), 2);
+});

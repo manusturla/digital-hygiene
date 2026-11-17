@@ -14,7 +14,7 @@ export function readTasks(main) {
       c.querySelector('.os-label')?.remove();
       const fig = c.querySelector('figure')?.outerHTML ?? '';
       c.querySelector('figure')?.remove();
-      return { os: li.dataset.os ?? null, fig, html: c.innerHTML.trim() };
+      return { os: li.dataset.os ?? null, alt: 'alt' in li.dataset, fig, html: c.innerHTML.trim() };
     }),
   }));
   const core = all.filter(t => t.core);

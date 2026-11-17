@@ -16,7 +16,7 @@ main { padding-bottom: 80px; }
 .os-tabs button[aria-pressed="true"] { background: var(--accent); color: var(--accent-fg); }
 .progress { height: 6px; background: var(--line); border-radius: 3px; overflow: hidden; margin: 0; }
 .progress > span { display: block; height: 100%; background: var(--ok); }
-.guide { display: grid; gap: 12px; padding-bottom: 110px; }
+.guide { display: grid; gap: 12px; padding-bottom: 180px; }
 .guide .steps { list-style: none; padding: 0; }
 .back { display: inline-flex; align-items: center; min-height: 44px; padding: 0; border: 0; background: none; color: var(--accent); font: inherit; font-weight: 600; cursor: pointer; white-space: nowrap; flex: none; }
 footer { color: var(--muted); font-size: 1rem; padding-top: var(--gap); padding-bottom: 32px; }

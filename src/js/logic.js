@@ -29,3 +29,7 @@ export function nextPending(done, coreIds, optionalIds, current) {
 }
 
 export const stepsFor = (steps, os) => steps.filter(s => s.os === null || s.os === os);
+
+// Pasos "alt" (alternativa): solo se llega con "No me funciona"; el resto los saltea.
+export const nextStep = (steps, i) => steps.findIndex((s, j) => j > i && !s.alt);
+export const mainStepNo = (steps, i) => steps.slice(0, i + 1).filter(s => !s.alt).length;
