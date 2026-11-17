@@ -10,6 +10,7 @@ main { padding-bottom: 80px; }
 .js .os-label { display: none; }
 .win { background: var(--ok-bg); border-left: 4px solid var(--ok); padding: 8px 12px; border-radius: 6px; }
 .warning { background: var(--warn-bg); border: 1px solid var(--warn-line); border-radius: var(--radius); padding: 12px var(--gap); margin: var(--gap) 0; }
+.note { background: var(--hl); border-left: 4px solid var(--accent); padding: 8px 12px; border-radius: 6px; margin: var(--gap) 0; }
 .os-tabs { display: flex; gap: 8px; margin: .5rem 0; }
 .os-tabs button { flex: 1; min-height: 44px; font: inherit; border: 2px solid var(--accent); background: transparent; color: var(--accent); border-radius: var(--radius); cursor: pointer; }
 .os-tabs button[aria-pressed="true"] { background: var(--accent); color: var(--accent-fg); }
