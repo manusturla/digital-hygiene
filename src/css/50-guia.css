@@ -51,3 +51,7 @@
 .ill.shot { padding: 0; background: none; }
 /* La captura entera siempre entra en la pantalla: nunca más ancha que la columna ni más alta que ~40% del alto visible. */
 .ill.shot img { display: block; width: auto; height: auto; max-width: 100%; max-height: 40vh; max-height: 40dvh; margin: 0 auto; border-radius: 14px; border: 1px solid var(--line); }
+/* Barra del navegador abajo (Firefox, DuckDuckGo): bottom:0 la deja tapada. dvh sigue a la barra: se achica si aparece y crece si se esconde. */
+@supports (height: 100dvh) {
+  .bar { bottom: auto; top: 100dvh; transform: translateY(-100%); }
+}
